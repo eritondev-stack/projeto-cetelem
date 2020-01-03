@@ -47,7 +47,6 @@
 
 <script>
 export default {
- 
   data() {
     return {
       statusbtn: "Login",
@@ -56,7 +55,7 @@ export default {
   },
   methods: {
     irHome() {
-      this.$router.push("/home");
+      this.$router.push("/dashboard");
       this.statusbtn = "Login";
       this.close = false;
     }

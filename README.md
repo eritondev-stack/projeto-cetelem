@@ -1,5 +1,3 @@
-# vuetify
-
 ## Project setup
 ```
 npm install
