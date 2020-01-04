@@ -45,4 +45,9 @@ export default {
 .slide-leave-active {
   animation: slide-out 0.3s ease;
 }
+
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 </style>
