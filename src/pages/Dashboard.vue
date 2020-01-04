@@ -2,8 +2,6 @@
   <v-content>
     <v-container fluid>
       <v-row align="center" justify="center">
-     
-     
         <v-col md="4" sm="12" xs="12" align="center">
           <v-card class="mt-4 mx-auto alinhar2" height="270px">
             <v-sheet
@@ -22,15 +20,10 @@
               </div>
 
               <!--   
-                <v-btn small @click="dialog = !dialog" color="#EF5350" width="80" class="ml-2" dark>Pendente</v-btn>-->
-
+              <v-btn small @click="dialog = !dialog" color="#EF5350" width="80" class="ml-2" dark>Pendente</v-btn>-->
             </v-card-text>
           </v-card>
         </v-col>
-
-     
- 
-      
 
         <v-col md="4" sm="12" xs="12" align="center">
           <v-card class="mt-4 mx-auto alinhar2" height="270px">
@@ -48,17 +41,11 @@
               <div class="subheading font-weight-light grey--text">
                 <apexchart type="bar" width="100%" :options="optionsITOrca" :series="seriesITOrca" />
               </div>
-
             </v-card-text>
           </v-card>
         </v-col>
 
-
-
-
-
-
-       <v-col md="4" sm="12" xs="12" align="center">
+        <v-col md="4" sm="12" xs="12" align="center">
           <v-card class="mt-4 mx-auto alinhar2" height="270px">
             <v-sheet
               class="v-sheet--offset mx-auto"
@@ -72,16 +59,18 @@
             <v-card-text class="pt-0">
               <div class="title font-weight-light mb-2"></div>
               <div class="subheading font-weight-light grey--text">
-                <apexchart type="area" width="100%" :options="optionsITCapacity" :series="seriesITCapacity" />
+                <apexchart
+                  type="area"
+                  width="100%"
+                  :options="optionsITCapacity"
+                  :series="seriesITCapacity"
+                />
               </div>
             </v-card-text>
           </v-card>
         </v-col>
 
-
-
-        
-      <v-col md="4" sm="12" xs="12" align="center">
+        <v-col md="4" sm="12" xs="12" align="center">
           <v-card class="mt-4 mx-auto alinhar2" height="270px">
             <v-sheet
               class="v-sheet--offset mx-auto"
@@ -89,25 +78,24 @@
               elevation="12"
               max-width="calc(100% - 32px)"
             >
-              <div class="card-titulo">ITGOV</div>
+              <div class="card-titulo">PROJETO</div>
             </v-sheet>
 
             <v-card-text class="pt-0">
               <div class="title font-weight-light mb-2"></div>
               <div class="subheading font-weight-light grey--text">
-           
+                <apexchart
+                  type="bar"
+                  width="100%"
+                  :options="optionsITProjetos"
+                  :series="seriesITProjetos"
+                />
               </div>
-
-
-           
             </v-card-text>
           </v-card>
         </v-col>
 
-
-
-
-       <v-col md="4" sm="12" xs="12" align="center">
+        <v-col md="4" sm="12" xs="12" align="center">
           <v-card class="mt-4 mx-auto alinhar2" height="270px">
             <v-sheet
               class="v-sheet--offset mx-auto"
@@ -115,19 +103,125 @@
               elevation="12"
               max-width="calc(100% - 32px)"
             >
-              <div class="card-titulo">ITGOV</div>
+              <div class="card-titulo">Calendarização</div>
             </v-sheet>
 
             <v-card-text class="pt-0">
               <div class="title font-weight-light mb-2"></div>
-              <div class="subheading font-weight-light grey--text">
-           
+              <div class="overflow-y-auto subheading font-weight-light grey--text">
+
+             <v-container style="height: 230px;" class="overflow-y-auto">
+                  <v-row align="center" justify="center">
+                      <table>
+                 
+                        <thead>
+                          <th>Plataforma</th>
+                          <th>Capacity</th>
+                          <th>Requerido</th>
+                          <th colspan="2">Delta</th>
+                        </thead>
+                   
+                        <tbody>
+                          <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100 </td>
+                            <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                            <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                                                   <tr>
+                            <td>Cobol</td>
+                            <td>500</td>
+                            <td>600</td>
+                            <td>-100</td>
+                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </v-row>
+                </v-container> 
               </div>
             </v-card-text>
           </v-card>
         </v-col>
 
-        
         <v-col md="4" sm="12" xs="12">
           <v-card class="mt-0 mx-auto alinhar" height="270px">
             <v-sheet
@@ -152,9 +246,6 @@
             </v-card-text>
           </v-card>
         </v-col>
-
-
-
 
         <!-- Grafico -->
         <v-col md="4" sm="12" xs="12" align="center"></v-col>
@@ -257,90 +348,187 @@ export default {
         legend: {
           position: "top",
           show: true
-        },
-   
+        }
       },
 
-       seriesITOrca: [{
-          name: 'Cons',
-          data: [1.7, 1.7,1.7,1.7, 1.7, 1.7, 1.7, 1.7, 1.7,1.7, 1.7, 1.7]
-        }, {
-          name: 'Deb',
-          data:  [1.7, 1.7,1.7,1.7, 1.7, 1.7, 1.7, 1.7, 1.7,1.7, 1.7, 1.7]
-        }, {
-          name: 'Credit',
-          data:  [1.7, 1.7,1.7,1.7, 1.7, 1.7, 1.7, 1.7, 1.7,1.7, 1.7, 1.7]
+      seriesITOrca: [
+        {
+          name: "Cons",
+          data: [1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7]
         },
-        ],
- 
-      optionsITOrca:{
+        {
+          name: "Deb",
+          data: [1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7]
+        },
+        {
+          name: "Credit",
+          data: [1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7]
+        }
+      ],
+
+      optionsITOrca: {
         colors: ["#03A9F4", "#64DD17", "#EF5350"],
         chart: {
-          type: 'bar',
+          type: "bar",
           height: 350,
           stacked: true,
-          toolbar:{
+          toolbar: {
             show: false
           }
         },
-        grid:{
+        grid: {
           show: false
         },
         plotOptions: {
           bar: {
-            horizontal: false,
-          },
+            horizontal: false
+          }
         },
         xaxis: {
-          type: 'string',
-          categories: ['Jan', 'Fev', 'Mar', 'Abr',
-            'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
-          ],
+          type: "string",
+          categories: [
+            "Jan",
+            "Fev",
+            "Mar",
+            "Abr",
+            "Mai",
+            "Jun",
+            "Jul",
+            "Ago",
+            "Set",
+            "Out",
+            "Nov",
+            "Dez"
+          ]
         },
         legend: {
-          position: 'top',
+          position: "top",
           show: true
-    
         },
         fill: {
           opacity: 1
         }
       },
-      seriesITCapacity: [{
-      
-          name: 'series1',
+      seriesITCapacity: [
+        {
+          name: "series1",
           data: [31, 40, 28, 51, 42, 109, 100]
-        }, {
-          name: 'series2',
+        },
+        {
+          name: "series2",
           data: [11, 32, 45, 32, 34, 52, 41]
-      
-      }],
-      optionsITCapacity:{
-         xaxis: {
-          type: 'string',
+        }
+      ],
+      optionsITCapacity: {
+        xaxis: {
+          type: "string",
           categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul"]
         },
-               legend: {
-          position: 'top',
+        legend: {
+          position: "top",
           show: true
-    
         },
-         grid:{
+        grid: {
           show: false
         },
         plotOptions: {
           bar: {
-            horizontal: false,
-          },
+            horizontal: false
+          }
         },
-        chart:{
-              toolbar:{
+        chart: {
+          toolbar: {
             show: false
           }
         }
- 
-      }
-    
+      },
+      seriesITProjetos: [
+        {
+          name: "Net Profit",
+          data: [44, 55]
+        },
+        {
+          name: "Revenue",
+          data: [76, 85]
+        },
+        {
+          name: "Free Cash Flow",
+          data: [35, 41]
+        }
+      ],
+      optionsITProjetos: {
+        labels: ["Man Days", "R$"],
+        colors: ["#03A9F4", "#64DD17", "#7B1FA2"],
+        legend: {
+          position: "top",
+          show: true
+        },
+        grid: {
+          show: false
+        },
+        chart: {
+          toolbar: {
+            show: false
+          }
+        }
+      },
+           seriesCalen: [
+        {
+          name: "Cons",
+          data: [1.7, 1.7, 1.7]
+        },
+        {
+          name: "Deb",
+          data: [1.7, 1.7, 1.7]
+        },
+        {
+          name: "Credit",
+          data: [1.7, 1.7, 1.7]
+        }
+      ],
+
+      optionsCalen: {
+        colors: ["#03A9F4", "#64DD17", "#EF5350"],
+        chart: {
+          type: "bar",
+          height: 350,
+          stacked: true,
+          toolbar: {
+            show: false
+          }
+        },
+        grid: {
+          show: true
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true
+          }
+        },
+        xaxis: {
+          type: "string",
+          categories: [
+            "Jan",
+            "Fev",
+            "Mar",
+
+            
+          ]
+        },
+        yaxis: {
+          title: {
+            text: undefined
+          },
+        },
+        legend: {
+          position: "top",
+          show: true
+        },
+        fill: {
+          opacity: 1
+        }
+      },
+      
     };
   },
   methods: {
@@ -398,11 +586,52 @@ $teste: #ffffff;
   top: -14px;
 }
 
-.subir{
+.subir {
+  position: relative;
+  top: -45px;
+  z-index: 0;
+}
 
-position: relative;
- top: -45px;
- z-index: 0;
+.roll {
+  width: 100%;
+  border: solid red 2px;
+  overflow: auto;
+  height: calc(100vh - 116px);
+}
+
+table{
+
+    border-collapse: collapse;
+    border: 1px solid  rgb(141, 139, 139);
+    text-align: center;
+    font-size:18px;
+    font-family: Calibri, Helvetica, sans-serif;
+    width: 400px;
+    margin-right: 4px;
+   margin-top: -7px;
+}
+
+th{
+
+    background: rgb(0, 176, 90);
+    color: white;
+    text-align: center;
+    border: 1px solid rgb(255, 255, 255);
+    padding:0 9px;
+}
+
+ td{
+
+    border: 1px solid rgb(235, 235, 235);
+    /* Evitar quebra de linhas tabela */
+    white-space: nowrap;
+    padding:0 9px;
+    color:rgb(87, 85, 85);
+    font-size: 17px;
+}
+.retirar{
+   border-left: 2px solid rgb(255, 255, 255);
+ 
 }
 
 </style>
