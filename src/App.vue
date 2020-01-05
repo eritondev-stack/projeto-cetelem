@@ -1,9 +1,9 @@
 <template>
-  <v-app>
+  <div>
     <transition name="slide" mode="out-in">
       <router-view></router-view>
     </transition>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -16,6 +16,8 @@ export default {
 </style>
 
 <style lang="scss">
+
+
 @keyframes slide-in {
   from {
     transform: translateY(-5px);
@@ -46,8 +48,5 @@ export default {
   animation: slide-out 0.3s ease;
 }
 
-body{
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
+
 </style>

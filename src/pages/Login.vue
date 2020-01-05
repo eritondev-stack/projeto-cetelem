@@ -1,48 +1,8 @@
 <template>
-  <div id="app" class="back">
-    <v-app id="inspire">
-      <v-content>
-        <v-container fluid fill-height>
-          <v-layout align-center justify-center>
-            <v-flex xs8 sm4 md3>
-              <v-card class="elevation-0" ref="login">
-                <v-toolbar color="rgb(169,209,142)">
-                  <v-toolbar-title class="white--text">Entry</v-toolbar-title>
-                </v-toolbar>
-                <v-card-text>
-                  <v-form>
-                    <v-text-field
-                      color="success"
-                      name="login"
-                      label="Login"
-                      type="text"
-                    ></v-text-field>
-                    <v-text-field
-                      color="success"
-                      label="Password"
-                      id="password"
-                      type="password"
-                    ></v-text-field>
-                  </v-form>
-                </v-card-text>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn
-                    @click="irHome()"
-                    :disabled="close"
-                    color="rgb(0,176,90)"
-                    class="white--text"
-                    block
-                    >{{ statusbtn }}</v-btn
-                  >
-                </v-card-actions>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-content>
-    </v-app>
-  </div>
+<div>
+      <h1>Login</h1>
+      <button @click="irHome()">Ir</button>
+</div>
 </template>
 
 <script>

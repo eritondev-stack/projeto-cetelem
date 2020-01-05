@@ -1,278 +1,211 @@
 <template>
-  <v-content>
-    <v-container fluid>
-      <v-row align="center" justify="center">
-        <v-col md="4" sm="12" xs="12" align="center">
-          <v-card class="mt-4 mx-auto alinhar2" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="#a9d18e"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">ITGOV</div>
-            </v-sheet>
+  <div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title">ITGov</div>
+            <apexchart
+              class="box-content"
+              type="pie"
+              width="320"
+              :options="chartOptions2"
+              :series="series"
+            />
+          </div>
+        </div>
 
-            <v-card-text class="pt-0">
-              <div class="title font-weight-light mb-2"></div>
-              <div class="subheading font-weight-light grey--text">
-                <apexchart type="pie" width="300" :options="chartOptions2" :series="series" />
-              </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title">Orçamento</div>
+            <apexchart type="bar" width="430" :options="optionsITOrca" :series="seriesITOrca" />
+          </div>
+        </div>
 
-              <!--   
-              <v-btn small @click="dialog = !dialog" color="#EF5350" width="80" class="ml-2" dark>Pendente</v-btn>-->
-            </v-card-text>
-          </v-card>
-        </v-col>
+        <div class="col-lg-4 col-md-6">
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title">ITCapacity</div>
+            <apexchart
+              type="area"
+              :width="tamanho"
+              :options="optionsITCapacity"
+              :series="seriesITCapacity"
+            />
+          </div>
+        </div>
 
-        <v-col md="4" sm="12" xs="12" align="center">
-          <v-card class="mt-4 mx-auto alinhar2" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="#a9d18e"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">ORÇAMENTO</div>
-            </v-sheet>
+        <div class="col-lg-4 col-md-6">
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title">Projetos</div>
+            <apexchart
+              type="bar"
+              width="410"
+              :options="optionsITProjetos"
+              :series="seriesITProjetos"
+            />
+          </div>
+        </div>
 
-            <v-card-text class="pt-0">
-              <div class="title font-weight-light mb-2"></div>
-              <div class="subheading font-weight-light grey--text">
-                <apexchart type="bar" width="100%" :options="optionsITOrca" :series="seriesITOrca" />
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
+        <div class="col-lg-4 col-md-6">
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title-cal">Calendarização</div>
+            <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
+              <table>
+                <thead>
+                  <th>Plataforma</th>
+                  <th>Capacity</th>
+                  <th>Requerido</th>
+                  <th colspan="2">Delta</th>
+                </thead>
 
-        <v-col md="4" sm="12" xs="12" align="center">
-          <v-card class="mt-4 mx-auto alinhar2" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="#a9d18e"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">ITCAPACITY</div>
-            </v-sheet>
+                <tbody>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-check-circle text-success"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cobol</td>
+                    <td>500</td>
+                    <td>600</td>
+                    <td>-100</td>
+                    <td class="retirar">
+                      <i class="fas fa-times text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 
-            <v-card-text class="pt-0">
-              <div class="title font-weight-light mb-2"></div>
-              <div class="subheading font-weight-light grey--text">
-                <apexchart
-                  type="area"
-                  width="100%"
-                  :options="optionsITCapacity"
-                  :series="seriesITCapacity"
-                />
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-
-        <v-col md="4" sm="12" xs="12" align="center">
-          <v-card class="mt-4 mx-auto alinhar2" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="#a9d18e"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">PROJETO</div>
-            </v-sheet>
-
-            <v-card-text class="pt-0">
-              <div class="title font-weight-light mb-2"></div>
-              <div class="subheading font-weight-light grey--text">
-                <apexchart
-                  type="bar"
-                  width="100%"
-                  :options="optionsITProjetos"
-                  :series="seriesITProjetos"
-                />
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-
-        <v-col md="4" sm="12" xs="12" align="center">
-          <v-card class="mt-4 mx-auto alinhar2" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="#a9d18e"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">Calendarização</div>
-            </v-sheet>
-
-            <v-card-text class="pt-0">
-              <div class="title font-weight-light mb-2"></div>
-              <div class="overflow-y-auto subheading font-weight-light grey--text">
-
-             <v-container style="height: 230px;" class="overflow-y-auto">
-                  <v-row align="center" justify="center">
-                      <table>
-                 
-                        <thead>
-                          <th>Plataforma</th>
-                          <th>Capacity</th>
-                          <th>Requerido</th>
-                          <th colspan="2">Delta</th>
-                        </thead>
-                   
-                        <tbody>
-                          <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100 </td>
-                            <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="error">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                            <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                                                   <tr>
-                            <td>Cobol</td>
-                            <td>500</td>
-                            <td>600</td>
-                            <td>-100</td>
-                             <td class="retirar"> <v-icon small color="success">mdi-brightness-1</v-icon></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </v-row>
-                </v-container> 
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-
-        <v-col md="4" sm="12" xs="12">
-          <v-card class="mt-0 mx-auto alinhar" height="270px">
-            <v-sheet
-              class="v-sheet--offset mx-auto"
-              color="cyan"
-              elevation="12"
-              max-width="calc(100% - 32px)"
-            >
-              <div class="card-titulo">Provas aprovadas</div>
-            </v-sheet>
-
-            <v-card-text class="subir">
-              <div class="title font-weight-light"></div>
-              <div class="subheading font-weight-light grey--text">
-                <GChart
+        <div class="col-lg-4 col-md-6">
+          <div v-show="true">
+            <!-- <h1>Mostrou</h1>
+            <button @click="mudar()" class="btn btn-primary btn-sm">Mudar</button>-->
+            <div class="box2 d-flex justify-content-center">
+              <div class="box-title">Aprovadas</div>
+              <div>
+     <!--            <GChart
                   :settings="{ packages: ['geochart'], mapsApiKey: 'AIzaSyDGPlV-Cw-p_WFVDj-CTd7QSph-lyVQIPE' }"
                   type="GeoChart"
                   :data="chartData"
                   :options="chartOptions"
-                />
+                /> -->
               </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-
-        <!-- Grafico -->
-        <v-col md="4" sm="12" xs="12" align="center"></v-col>
-
-        <v-dialog v-model="dialog" max-width="500">
-          <v-card>
-            <v-card-title class="headline red--text mb-5">Pendentes</v-card-title>
-            <v-card-text>
-              <v-data-table
-                :headers="headers"
-                :items="desserts"
-                :items-per-page="5"
-                class="elevation-1"
-              ></v-data-table>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="error" text @click="dialog = false">Fechar</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-row>
-    </v-container>
-  </v-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+/* eslint-disable */
 import { GChart } from "vue-google-charts";
 
 export default {
@@ -282,7 +215,7 @@ export default {
   components: {
     GChart
   },
-  /* eslint-disable */
+
   beforeRouteEnter(to, from, next) {
     if (true) {
       next();
@@ -295,8 +228,10 @@ export default {
   },
   data() {
     return {
+      mostrar: false,
       chartData: [],
       chartOptions: null,
+      tamanho: 410,
 
       dialog: false,
       headers: [
@@ -347,7 +282,11 @@ export default {
         colors: ["#03A9F4", "#64DD17", "#EF5350", "#E0E0E0"],
         legend: {
           position: "top",
-          show: true
+          show: true,
+          offsetY: 15
+        },
+        chart: {
+          offsetY: 15
         }
       },
 
@@ -370,7 +309,6 @@ export default {
         colors: ["#03A9F4", "#64DD17", "#EF5350"],
         chart: {
           type: "bar",
-          height: 350,
           stacked: true,
           toolbar: {
             show: false
@@ -401,9 +339,13 @@ export default {
             "Dez"
           ]
         },
+        yaxis: {
+          show: false
+        },
         legend: {
           position: "top",
-          show: true
+          show: true,
+          offsetY: 35
         },
         fill: {
           opacity: 1
@@ -426,9 +368,13 @@ export default {
         },
         legend: {
           position: "top",
-          show: true
+          show: true,
+          offsetY: 35
         },
         grid: {
+          show: false
+        },
+        yaxis: {
           show: false
         },
         plotOptions: {
@@ -439,7 +385,8 @@ export default {
         chart: {
           toolbar: {
             show: false
-          }
+          },
+          offsetY: 15
         }
       },
       seriesITProjetos: [
@@ -461,18 +408,24 @@ export default {
         colors: ["#03A9F4", "#64DD17", "#7B1FA2"],
         legend: {
           position: "top",
-          show: true
+          show: true,
+          offsetY: 35
         },
         grid: {
+          show: false
+        },
+        yaxis: {
           show: false
         },
         chart: {
           toolbar: {
             show: false
-          }
+          },
+
+          offsetY: 15
         }
       },
-           seriesCalen: [
+      seriesCalen: [
         {
           name: "Cons",
           data: [1.7, 1.7, 1.7]
@@ -507,18 +460,12 @@ export default {
         },
         xaxis: {
           type: "string",
-          categories: [
-            "Jan",
-            "Fev",
-            "Mar",
-
-            
-          ]
+          categories: ["Jan", "Fev", "Mar"]
         },
         yaxis: {
           title: {
             text: undefined
-          },
+          }
         },
         legend: {
           position: "top",
@@ -527,14 +474,29 @@ export default {
         fill: {
           opacity: 1
         }
-      },
-      
+      }
     };
   },
   methods: {
-    mapa() {}
+    mudar() {
+      this.tamanho = 300;
+    },
+    myEventHandler(e) {
+      if (e.target.innerWidth < 489) {
+        console.log("Menor que 489");
+      }
+    }
   },
-  created() {},
+  created() {
+    setTimeout(() => {
+      this.mostrar = true;
+    }, 10000);
+
+    window.addEventListener("resize", this.myEventHandler);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+  },
   mounted() {
     this.chartData = [
       ["Country", "Aprovadas"],
@@ -550,10 +512,6 @@ export default {
       colorAxis: { colors: ["blue", "yellow", "red"] },
       backgroundColor: "#ffffff"
     };
-
-    setInterval(() => {
-      this.mapa();
-    }, 2000);
   }
 };
 </script>
@@ -561,79 +519,92 @@ export default {
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
+$verde1: rgb(0, 176, 90);
+$verde1t: rgba(0, 176, 90, 0.7);
+$verde2: rgb(146, 208, 80);
+$verde3: #a9d18e;
+$roxo: rgb(171, 91, 153);
+$azul: rgb(131, 205, 232);
 $teste: #ffffff;
 
-.v-sheet--offset {
-  top: -8px;
-  position: relative;
-  z-index: 2;
-}
-
-.card-titulo {
-  font-family: "Open Sans", sans-serif;
-  color: rgb(255, 255, 255);
-  height: 30px;
-  align-items: center;
+table {
+  border-collapse: collapse;
+  border: 1px solid rgb(141, 139, 139);
   text-align: center;
+  font-size: 18px;
+  font-family: Calibri, Helvetica, sans-serif;
+  width: 98%;
+  margin-left: 4px;
+  margin-top: 3px;
+}
+
+th {
+  background: rgb(0, 176, 90);
+  color: white;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 0 9px;
+}
+
+td {
+  border: 1px solid rgb(235, 235, 235);
+  /* Evitar quebra de linhas tabela */
+  white-space: nowrap;
+  padding: 0 9px;
+  color: rgb(87, 85, 85);
+  font-size: 17px;
+}
+.retirar {
+  border-left: 2px solid rgb(255, 255, 255);
+}
+
+.box-main {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  height: 250px;
+}
+.box-title {
   font-size: 20px;
-}
-
-.alinhar {
-  top: -6px;
-}
-
-.alinhar2 {
-  top: -14px;
-}
-
-.subir {
-  position: relative;
-  top: -45px;
-  z-index: 0;
-}
-
-.roll {
+  background-color: $verde2;
   width: 100%;
-  border: solid red 2px;
-  overflow: auto;
-  height: calc(100vh - 116px);
+  border-radius: 10px;
+  top: -4px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  color: white;
 }
 
-table{
-
-    border-collapse: collapse;
-    border: 1px solid  rgb(141, 139, 139);
-    text-align: center;
-    font-size:18px;
-    font-family: Calibri, Helvetica, sans-serif;
-    width: 400px;
-    margin-right: 4px;
-   margin-top: -7px;
+.box-title-cal {
+  font-size: 20px;
+  background-color: $verde2;
+  width: 95%;
+  border-radius: 10px;
+  top: 6px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.box-content {
+  margin-top: 13px;
 }
 
-th{
-
-    background: rgb(0, 176, 90);
-    color: white;
-    text-align: center;
-    border: 1px solid rgb(255, 255, 255);
-    padding:0 9px;
+.box2 {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  height: 275px;
 }
-
- td{
-
-    border: 1px solid rgb(235, 235, 235);
-    /* Evitar quebra de linhas tabela */
-    white-space: nowrap;
-    padding:0 9px;
-    color:rgb(87, 85, 85);
-    font-size: 17px;
-}
-.retirar{
-   border-left: 2px solid rgb(255, 255, 255);
- 
-}
-
 </style>
 
 
