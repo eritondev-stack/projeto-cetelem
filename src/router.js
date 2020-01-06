@@ -6,6 +6,7 @@ import App from './pages/App'
 import Dashboard from './pages/Dashboard'
 import Upload from './pages/Upload'
 
+
 Vue.use(Router)
 
 export default new Router({
