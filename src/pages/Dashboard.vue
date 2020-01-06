@@ -1,11 +1,8 @@
 <template>
   <div class="container-fluid back">
     <div class="row">
-
-      <div class="col-12">
-         
-      </div>
-  <i class="fas fa-bars hamburguer"></i>
+      <div class="col-12"></div>
+      <i class="fas fa-bars hamburguer"></i>
       <div class="col-lg-4 col-md-6">
         <div class="box2 d-flex justify-content-center">
           <div class="box-title">ITGov</div>
@@ -191,7 +188,7 @@
           <!-- <h1>Mostrou</h1>
           <button @click="mudar()" class="btn btn-primary btn-sm">Mudar</button>-->
           <div class="box2 d-flex justify-content-center">
-          <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
+            <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
             <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
               <table>
                 <thead>
@@ -335,6 +332,11 @@ export default {
   },
   data() {
     return {
+      rejeitado: 0,
+      aprovado: 0,
+      nao_enviado: 0,
+      pendente: 0,
+
       mostrar: false,
       chartData: [],
       chartOptions: null,
@@ -383,9 +385,9 @@ export default {
         }
       ],
 
-      series: [0, 0, 0, 0],
+      series: [1, 1, 1, 1],
       chartOptions2: {
-        labels: ["Ok", "Aprovada", "Pendente", "Enviada"],
+        labels: ["Aprov", "Não Env", "Pendente", "Rejeitado"],
         colors: ["#03A9F4", "#64DD17", "#EF5350", "#E0E0E0"],
         legend: {
           position: "top",
@@ -597,8 +599,34 @@ export default {
   created() {
     setTimeout(() => {
       this.mostrar = true;
-      this.series = [13, 19,22, 12]
     }, 4000);
+
+    this.$http
+      .get("http://localhost:5000/resumo/itgov")
+      .then(response => {
+        console.log(response.data);
+        response.data.forEach(element => {
+          if (element.status == "REJEITADO") {
+            this.rejeitado = element.total;
+          } else if (element.status == "APROVADO") {
+            this.aprovado = element.total;
+          } else if (element.status == "NÃO ENVIADO") {
+            this.nao_enviado = element.total;
+          } else if (element.status == "PENDENTE") {
+            this.pendente = element.total;
+          }
+
+          this.series = [
+            this.aprovado,
+            this.nao_enviado,
+            this.pendente,
+            this.rejeitado
+          ];
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
     window.addEventListener("resize", this.myEventHandler);
   },
@@ -718,21 +746,20 @@ td {
   background-color: #dbdbdb;
 }
 
-.hamburguer{
+.hamburguer {
   position: fixed;
   top: 2px;
   left: 24px;
   font-size: 27px;
-  color:rgb(23, 38, 253);
+  color: rgb(23, 38, 253);
   transition: 500ms;
   z-index: 1002;
-  
 }
 
-.hamburguer:hover{
+.hamburguer:hover {
   top: 0px;
-   color:rgb(23, 38, 253);
-   font-size: 30px;
+  color: rgb(23, 38, 253);
+  font-size: 30px;
 }
 </style>
 
