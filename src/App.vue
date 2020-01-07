@@ -40,11 +40,11 @@ export default {
 }
 
 .slide-enter-active {
-  animation: slide-in 0.3s ease;
+  animation: slide-in 0.1s ease;
 }
 
 .slide-leave-active {
-  animation: slide-out 0.3s ease;
+  animation: slide-out 0.1s ease;
 }
 
 

@@ -1,5 +1,6 @@
 <template>
-  <div class="container-fluid back">
+<div class="back">
+    <div class="container-fluid">
     <div class="row">
       <div class="col-12"></div>
       <i class="fas fa-bars hamburguer"></i>
@@ -306,6 +307,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -663,6 +665,12 @@ $roxo: #ab5b99;
 $azul: rgb(131, 205, 232);
 $teste: #ffffff;
 
+.back{
+  background: url('../assets/back.png');
+  height: 100vh;
+  background: cover;
+}
+
 table {
   border-collapse: collapse;
   border: 1px solid rgb(141, 139, 139);
@@ -742,7 +750,7 @@ td {
   height: 275px;
 }
 
-.back {
+body {
   background-color: #dbdbdb;
 }
 
@@ -760,6 +768,26 @@ td {
   top: 0px;
   color: rgb(23, 38, 253);
   font-size: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 </style>
 

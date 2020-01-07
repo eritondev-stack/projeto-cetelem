@@ -25,7 +25,7 @@
               />
               <input class="form-control mt-4 login" type="text" placeholder="User" />
               <input class="form-control mt-4 login" type="password" placeholder="Password" />
-              <button class="btn btn-sm btn-cetelem mt-4">Entrar</button>
+              <button @click="irHome()" class="btn btn-sm btn-cetelem mt-4">Entrar</button>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 <template>
-<div>
+<body>
     <transition name="slide" mode="out-in">
       <router-view></router-view>
     </transition>
-</div>
+</body>
 
 </template>
 
@@ -56,6 +56,5 @@ $verde3: #a9d18e;
 $roxo: rgb(171, 91, 153);
 $azul: rgb(131, 205, 232);
 $teste: #ffffff;
-
 
 </style>
