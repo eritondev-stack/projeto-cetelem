@@ -659,7 +659,7 @@ $verde1: rgb(0, 176, 90);
 $verde1t: rgba(0, 176, 90, 0.7);
 $verde2: rgb(146, 208, 80);
 $verde3: #a9d18e;
-$roxo: rgb(171, 91, 153);
+$roxo: #ab5b99;
 $azul: rgb(131, 205, 232);
 $teste: #ffffff;
 
