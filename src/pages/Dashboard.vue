@@ -415,15 +415,15 @@ export default {
 
       seriesITOrca: [
         {
-          name: "Cons",
+          name: "Real",
           data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
-          name: "Déb",
+          name: "Negative",
           data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
-          name: "Cred",
+          name: "Budget",
           data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
       ],
@@ -660,15 +660,15 @@ export default {
         setTimeout(() => {
           this.seriesITOrca = [
             {
-              name: "Cons",
+              name: "Real",
               data: saldo_lim
             },
             {
-              name: "Déb",
+              name: "Negative",
               data: saldo_neg
             },
             {
-              name: "Cred",
+              name: "Budget",
               data: saldo_pos
             }
           ];
@@ -687,6 +687,10 @@ export default {
             },
             plotOptions: {
               bar: {
+                dataLabels: {
+               hideOverflowingLabels: false,
+
+               },
                 horizontal: false
               }
             },
