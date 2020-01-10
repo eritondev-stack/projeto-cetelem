@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12"></div>
-        <i class="fas fa-bars hamburguer"></i>
+        <i id="hamburguer" class="fas fa-bars"></i>
         <div class="col-lg-4 col-md-6">
           <div class="box-title-cal2">ITGov</div>
           <div class="box2 d-flex justify-content-center">
@@ -840,7 +840,7 @@ td {
   -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
   color: white;
-  z-index: 1003;
+  z-index: 10;
 }
 
 .box-content {
@@ -860,20 +860,21 @@ body {
   background-color: #dbdbdb;
 }
 
-.hamburguer {
+#hamburguer {
   position: fixed;
   top: 2px;
   left: 24px;
   font-size: 27px;
   color: rgb(23, 38, 253);
   transition: 500ms;
-  z-index: 1002;
+  z-index: 10000;
 }
 
-.hamburguer:hover {
+#hamburguer:hover {
   top: 0px;
   color: rgb(23, 38, 253);
   font-size: 30px;
+
 }
 
 /* width */

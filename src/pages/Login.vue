@@ -26,8 +26,14 @@
               <input v-model="user" class="form-control mt-4 login" type="text" placeholder="User" />
               <input v-model="password" class="form-control mt-4 login" type="password" placeholder="Password" />
               <button @click="irHome()" :disabled="hab" class="btn btn-sm btn-cetelem mt-4">{{ statusbtn }}</button>
-              <div class="text-danger mt-3">
-               {{ msgErro }}
+              <div class="text-danger mt-3 error">
+<!--                 
+              <div class="d-inline">
+                 <i class="fas fa-exclamation-circle fa-2x"></i> 
+              </div> -->
+               <div class="d-inline">
+                  <span style="padding-bottom: 30px;">{{ msgErro }}</span>
+               </div>
               </div>
             </div>
           </div>
@@ -81,7 +87,7 @@ export default {
         console.log(error);
         this.hab = false
         this.statusbtn = "Entrar"
-        this.msgErro = error
+        this.msgErro = "Usúario ou senha inválidos"
       });
 
       
@@ -95,6 +101,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+
 .back{
   background: url('../assets/back.png');
   height: 100vh;
@@ -226,5 +236,9 @@ box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
 .input-custom {
   width: 80%;
   margin: 0 auto;
+}
+
+.error{
+font-family: 'Varela Round', sans-serif;
 }
 </style>
