@@ -15,33 +15,25 @@ export default {
   components: {},
   /* eslint-disable */
   beforeRouteEnter(to, from, next) {
-    if (true) {
-      next();
-    } else {
-      console.log("Não autenticado");
+
+    if(true){
+      next(true)
+    }else{
+      
       next({
         path: "/"
-      });
+      })
+    }
+  
+  },
+
+  data(){
+    return{
+
     }
   },
-  data: () => ({
-    drawer: false,
-    toggleidCss: "hamburger",
-    items: [
-      { title: "Home", icon: "dashboard" },
-      { title: "About", icon: "question_answer" }
-    ]
-  }),
   methods: {
-    toggleMenu() {
-      this.drawer = !this.drawer;
-
-      if (this.drawer == false) {
-        this.toggleidCss = "hamburger";
-      } else {
-        this.toggleidCss = "hamburger1";
-      }
-    }
+   
   }
 };
 </script>

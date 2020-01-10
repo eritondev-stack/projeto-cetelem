@@ -2,7 +2,7 @@
 <body class="back">
     <div class="container">
     <div class="row no-gutters">
-      <div class="col-md-6">
+      <div class="col-md-6 d-none d-md-block">
         <div class="box1">
           <img
             src="../assets/work1.gif"
@@ -23,9 +23,12 @@
                 class="img-fluid"
                 alt
               />
-              <input class="form-control mt-4 login" type="text" placeholder="User" />
-              <input class="form-control mt-4 login" type="password" placeholder="Password" />
-              <button @click="irHome()" class="btn btn-sm btn-cetelem mt-4">Entrar</button>
+              <input v-model="user" class="form-control mt-4 login" type="text" placeholder="User" />
+              <input v-model="password" class="form-control mt-4 login" type="password" placeholder="Password" />
+              <button @click="irHome()" :disabled="hab" class="btn btn-sm btn-cetelem mt-4">{{ statusbtn }}</button>
+              <div class="text-danger mt-3">
+               {{ msgErro }}
+              </div>
             </div>
           </div>
         </div>
@@ -41,42 +44,52 @@
 export default {
   data() {
     return {
-      statusbtn: "Login",
-      close: false,
-      box1: "box1",
-      box2: "box2",
-      imagem: true,
-      imagem: false
+      statusbtn: "Entrar",
+      user: null,
+      password: null,
+      msgErro: null,
+      hab: false,
+
     };
   },
   methods: {
     irHome() {
-      this.$router.push("/dashboard");
-      this.statusbtn = "Login";
-      this.close = false;
-    },
-    changeCss() {
-      setTimeout(() => {
-        console.log("Passei por aqui");
+  
 
-        if (this.imagem) {
-          this.box1 = "box1v";
-          this.box2 = "box2v";
-          this.imagem = false;
-          this.imagem2 = true;
-        } else {
-          this.box1 = "box1";
-          this.box2 = "box2";
-          this.imagem = true;
-          this.imagem2 = false;
+    this.hab = true
+    this.statusbtn = "Carregando"
+
+  const usuario = {
+    id: this.user,
+    senha: this.password
+  }
+
+    this.$http
+      .post("http://eriton.pythonanywhere.com/login", usuario)
+      .then(response => {
+      
+       console.log(response.status)
+       this.hab = false  
+       this.statusbtn = "Entrar"
+
+        if(response.status == 200){
+          this.$router.push("/dashboard")
         }
 
-        this.changeCss();
-      }, 5000);
-    }
+      })
+      .catch(error => {
+        console.log(error);
+        this.hab = false
+        this.statusbtn = "Entrar"
+        this.msgErro = error
+      });
+
+      
+    },
+ 
   },
   created() {
-    this.changeCss();
+   
   }
 };
 </script>

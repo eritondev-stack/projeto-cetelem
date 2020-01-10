@@ -5,34 +5,54 @@
         <div class="col-12"></div>
         <i class="fas fa-bars hamburguer"></i>
         <div class="col-lg-4 col-md-6">
+          <div class="box-title-cal2">ITGov</div>
           <div class="box2 d-flex justify-content-center">
-            <div class="box-title">ITGov</div>
-
-            <img v-if="itgovstatus"  style="margin-top: 90px;"  height="100px;" src="@/assets/Blocks.gif" alt="" srcset="">
-             <apexchart v-else
+            <img
+              v-if="itgovstatus"
+              style="margin-top: 90px;"
+              height="100px;"
+              src="@/assets/Blocks.gif"
+              alt
+              srcset
+            />
+            <apexchart
+              v-else
               class="box-content"
               type="pie"
               width="320"
               :options="chartOptions2"
               :series="series"
-            /> 
+            />
           </div>
         </div>
 
         <div class="col-lg-4 col-md-6">
+          <div class="box-title-cal2">Orçamento</div>
           <div class="box2 d-flex justify-content-center">
-            <div class="box-title">Orçamento</div>
-             <img v-if="orcastatus"  style="margin-top: 90px;"  height="100px;" src="@/assets/Blocks.gif" alt="" srcset="">
-            <apexchart v-else type="bar" width="430" :options="optionsITOrca" :series="seriesITOrca" />
+            <img
+              v-if="orcastatus"
+              style="margin-top: 90px;"
+              height="100px;"
+              src="@/assets/Blocks.gif"
+              alt
+              srcset
+            />
+            <apexchart
+              v-else
+              type="bar"
+              :width="tamanhoOrca"
+              :options="optionsITOrca"
+              :series="seriesITOrca"
+            />
           </div>
         </div>
 
         <div class="col-lg-4 col-md-6">
+          <div class="box-title-cal2">ITCapacity</div>
           <div class="box2 d-flex justify-content-center">
-            <div class="box-title">ITCapacity</div>
             <apexchart
               type="area"
-              :width="tamanho"
+              :width="tamanhoItCap"
               :options="optionsITCapacity"
               :series="seriesITCapacity"
             />
@@ -40,8 +60,8 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
+          <div class="box-title-cal2">Projetos</div>
           <div class="box2 d-flex justify-content-center">
-            <div class="box-title">Projetos</div>
             <apexchart
               type="bar"
               width="410"
@@ -188,124 +208,120 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
-          <div v-show="true">
-            <!-- <h1>Mostrou</h1>
-            <button @click="mudar()" class="btn btn-primary btn-sm">Mudar</button>-->
-            <div class="box2 d-flex justify-content-center">
-              <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
-              <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
-                <table>
-                  <thead>
-                    <th style="background-color: rgb(171, 91, 153);" colspan="2">Pais</th>
-                    <th style="background-color: rgb(171, 91, 153);">Quantidade</th>
-                  </thead>
+          <div class="box2 d-flex justify-content-center">
+            <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
+            <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
+              <table>
+                <thead>
+                  <th style="background-color: rgb(171, 91, 153);" colspan="2">Pais</th>
+                  <th style="background-color: rgb(171, 91, 153);">Quantidade</th>
+                </thead>
 
-                  <tbody>
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
-                      </td>
-                      <td class="retirar">França</td>
-                      <td>600</td>
-                    </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
+                    </td>
+                    <td class="retirar">França</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Brasil</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Brasil</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Estados Unidos</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Estados Unidos</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Espanha</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Espanha</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Africa do Sul</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Africa do Sul</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Reino Unido</td>
-                      <td>600</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
-                      </td>
-                      <td class="retirar">França</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Reino Unido</td>
+                    <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
+                    </td>
+                    <td class="retirar">França</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Brasil</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Brasil</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Estados Unidos</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Estados Unidos</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Espanha</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Espanha</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Africa do Sul</td>
-                      <td>600</td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Africa do Sul</td>
+                    <td>600</td>
+                  </tr>
 
-                    <tr>
-                      <td>
-                        <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
-                      </td>
-                      <td class="retirar">Reino Unido</td>
-                      <td>600</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--<GChart
+                  <tr>
+                    <td>
+                      <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
+                    </td>
+                    <td class="retirar">Reino Unido</td>
+                    <td>600</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--<GChart
                   :settings="{ packages: ['geochart'], mapsApiKey: 'AIzaSyDGPlV-Cw-p_WFVDj-CTd7QSph-lyVQIPE' }"
                   type="GeoChart"
                   :data="chartData"
                   :options="chartOptions"
                   width="300px"
-              />-->
-            </div>
+            />-->
           </div>
         </div>
       </div>
@@ -325,16 +341,6 @@ export default {
     GChart
   },
 
-  beforeRouteEnter(to, from, next) {
-    if (true) {
-      next();
-    } else {
-      console.log("Não autenticado");
-      next({
-        path: "/"
-      });
-    }
-  },
   data() {
     return {
       rejeitado: 0,
@@ -347,7 +353,8 @@ export default {
       mostrar: false,
       chartData: [],
       chartOptions: null,
-      tamanho: 410,
+      tamanhoOrca: 430,
+      tamanhoItCap: 420,
 
       dialog: false,
       headers: [
@@ -409,7 +416,7 @@ export default {
       seriesITOrca: [
         {
           name: "Cons",
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0]
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
           name: "Déb",
@@ -594,18 +601,20 @@ export default {
     };
   },
   methods: {
-    mudar() {
-      this.tamanho = 300;
-    },
     myEventHandler(e) {
       if (e.target.innerWidth < 489) {
+        this.tamanhoOrca = 360;
+        this.tamanhoItCap = 360;
         console.log("Menor que 489");
+      } else {
+        this.tamanhoOrca = 430;
+        this.tamanhoItCap = 410;
       }
     }
   },
   created() {
     this.$http
-      .get("http://localhost:5000/resumo/itgov")
+      .get("http://eriton.pythonanywhere.com/resumo/itgov")
       .then(response => {
         response.data.forEach(element => {
           if (element.status == "REJEITADO") {
@@ -618,17 +627,15 @@ export default {
             this.pendente = element.total;
           }
 
-            setTimeout(() => {
+          setTimeout(() => {
             this.series = [
-            this.aprovado,
-            this.nao_enviado,
-            this.pendente,
-            this.rejeitado
-
-            
-          ];
-          this.itgovstatus = false
-            }, 1000);
+              this.aprovado,
+              this.nao_enviado,
+              this.pendente,
+              this.rejeitado
+            ];
+            this.itgovstatus = false;
+          }, 1000);
         });
       })
       .catch(error => {
@@ -636,7 +643,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:5000/resumo/orcamento")
+      .get("http://eriton.pythonanywhere.com/resumo/orcamento")
       .then(response => {
         var meses = [];
         var saldo_lim = [];
@@ -651,56 +658,56 @@ export default {
         });
 
         setTimeout(() => {
-                 this.seriesITOrca = [
-          {
-            name: "Cons",
-            data: saldo_lim
-          },
-          {
-            name: "Déb",
-            data: saldo_neg
-          },
-          {
-            name: "Cred",
-            data: saldo_pos
-          }
-        ];
+          this.seriesITOrca = [
+            {
+              name: "Cons",
+              data: saldo_lim
+            },
+            {
+              name: "Déb",
+              data: saldo_neg
+            },
+            {
+              name: "Cred",
+              data: saldo_pos
+            }
+          ];
 
-        this.optionsITOrca = {
-          colors: ["#03A9F4", "#EF5350", "#64DD17"],
-          chart: {
-            type: "bar",
-            stacked: true,
-            toolbar: {
+          this.optionsITOrca = {
+            colors: ["#03A9F4", "#EF5350", "#64DD17"],
+            chart: {
+              type: "bar",
+              stacked: true,
+              toolbar: {
+                show: false
+              }
+            },
+            grid: {
               show: false
+            },
+            plotOptions: {
+              bar: {
+                horizontal: false
+              }
+            },
+            xaxis: {
+              type: "string",
+              categories: meses
+            },
+            yaxis: {
+              show: false
+            },
+            legend: {
+              position: "top",
+              show: true,
+              offsetY: 35
+            },
+            fill: {
+              opacity: 1
             }
-          },
-          grid: {
-            show: false
-          },
-          plotOptions: {
-            bar: {
-              horizontal: false
-            }
-          },
-          xaxis: {
-            type: "string",
-            categories: meses
-          },
-          yaxis: {
-            show: false
-          },
-          legend: {
-            position: "top",
-            show: true,
-            offsetY: 35
-          },
-          fill: {
-            opacity: 1
-          }
-        };
+          };
 
-        this.orcastatus = false
+          this.orcastatus = false;
         }, 1500);
       })
       .catch(error => {
@@ -708,6 +715,12 @@ export default {
       });
 
     window.addEventListener("resize", this.myEventHandler);
+
+    var width = document.body.clientWidth;
+    if (width <= 375) {
+      this.tamanhoItCap = 360;
+      this.tamanhoOrca = 360;
+    }
   },
   destroyed() {
     window.removeEventListener("resize", this.myEventHandler);
@@ -806,7 +819,7 @@ td {
   background-color: $verde2;
   width: 95%;
   border-radius: 10px;
-  top: 6px;
+  top: 0px;
   position: absolute;
   text-align: center;
   -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
@@ -814,6 +827,22 @@ td {
   box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
   color: white;
 }
+
+.box-title-cal2 {
+  font-size: 20px;
+  background-color: $verde2;
+  width: 94%;
+  border-radius: 10px;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  color: white;
+  z-index: 1003;
+}
+
 .box-content {
   margin-top: 13px;
 }
