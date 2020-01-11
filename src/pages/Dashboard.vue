@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12"></div>
-        <i id="hamburguer" class="fas fa-bars"></i>
+       
         <div class="col-lg-4 col-md-6">
           <div class="box-title-cal2">ITGov</div>
           <div class="box2 d-flex justify-content-center">
@@ -864,22 +864,7 @@ body {
   background-color: #dbdbdb;
 }
 
-#hamburguer {
-  position: fixed;
-  top: 2px;
-  left: 24px;
-  font-size: 27px;
-  color: rgb(23, 38, 253);
-  transition: 500ms;
-  z-index: 10000;
-}
 
-#hamburguer:hover {
-  top: 0px;
-  color: rgb(23, 38, 253);
-  font-size: 30px;
-
-}
 
 /* width */
 ::-webkit-scrollbar {
