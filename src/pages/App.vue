@@ -20,9 +20,9 @@
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
-      <div v-show="show1" class="item-sidebar">
-        <a href="#">Home 1</a>
-      </div>
+      <router-link tag="div" to="/dashboard" v-show="show1" class="item-sidebar">    
+         <a><i style="font-size: 24px;" class="fas fa-chart-bar mr-2"></i>Dashboard</a>
+      </router-link>
     </transition>
 
     <transition
@@ -30,7 +30,7 @@
       leave-active-class="animated bounceOutLeft"
     >
       <div v-show="show2" class="item-sidebar">
-        <a href="#">Home 1</a>
+         <a href="#"><i style="font-size: 24px;" class="fas fa-upload mr-2"></i>Upload</a>
       </div>
     </transition>
 
@@ -39,7 +39,7 @@
       leave-active-class="animated bounceOutLeft"
     >
       <div v-show="show3" class="item-sidebar">
-        <a href="#">Home 1</a>
+       <a href="#"><i style="font-size: 24px;" class="fas fa-user mr-2"></i>Perfil</a>
       </div>
     </transition>
 
@@ -47,9 +47,9 @@
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
-      <div v-show="show4" class="item-sidebar">
-        <a href="#">Home 1</a>
-      </div>
+      <router-link tag="div" to="/config" v-show="show4" class="item-sidebar">
+       <a><i style="font-size: 24px;" class="fas fa-cog mr-2"></i>Config</a>
+      </router-link>
     </transition>
 
     <transition
@@ -57,7 +57,7 @@
       leave-active-class="animated bounceOutLeft"
     >
       <div v-show="show5" class="item-sidebar">
-        <a href="#">Home 1</a>
+       <a href="#"><i style="font-size: 24px;" class="fas fa-sign-out-alt mr-2"></i>Sair</a>
       </div>
     </transition>
 
@@ -66,10 +66,10 @@
 
   </div>
 
-  <div class="overlay"></div>
+  <div :class="overlay" @click="sair()"></div>
 
   <transition name="slide" mode="out-in">
-    <router-view></router-view>
+    <router-view ></router-view>
   </transition>
 </body>
 </template>
@@ -93,14 +93,15 @@ export default {
 
   data() {
     return {
-      show: true,
-      show1: true,
-      show2: true,
-      show3: true,
-      show4: true,
-      show5: true,
-      show6: true,
-      sidebar: "sidebar"
+      show: false,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      show6: false,
+      sidebar: "sidebardesativ",
+      overlay: 'overlayOut'
     };
   },
   methods: {
@@ -109,6 +110,7 @@ export default {
 
        setTimeout(() => {
           this.show = !this.show;
+           this.overlay ="overlayOut"
         }, 50);
 
         setTimeout(() => {
@@ -138,6 +140,7 @@ export default {
 
         setTimeout(() => {
             this.sidebar = 'sidebardesativ'
+           
         }, 700);
 
       } else {
@@ -147,6 +150,7 @@ export default {
 
         setTimeout(() => {
           this.show = !this.show;
+           this.overlay ="overlayIn"
         }, 50);
 
         setTimeout(() => {
@@ -171,6 +175,7 @@ export default {
 
         setTimeout(() => {
           this.show6 = !this.show6;
+         
         }, 600);
 
  
@@ -178,13 +183,20 @@ export default {
 
 
      
+    },
+    sair(){
+      this.sidebarToggle()
     }
+  },
+  created(){
+    
   }
 };
 </script>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 $verde1: #00b05a;
 $verde1t: rgba(0, 176, 90, 0.7);
@@ -196,25 +208,35 @@ $teste: #ffffff;
 
 #hamburguer {
   position: fixed;
-  top: 10px;
+  top: 2px;
   left: 24px;
   font-size: 27px;
-  color: rgb(246, 0, 0);
+  color: rgba(184, 19, 250, 0.698);
   transition: 500ms;
   z-index: 2000;
   cursor: pointer;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
 }
 
 #hamburguer:hover {
-  top: 10px;
-  color: rgb(23, 38, 253);
-  font-size: 30px;
+  position: fixed;
+  top: 2px;
+  left: 24px;
+  font-size: 27px;
+  color: rgba(184, 19, 250, 1);
+  transition: 500ms;
+  z-index: 2000;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 4px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
 }
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
 
 #sidebar {
   width: 210px;
@@ -232,6 +254,7 @@ $teste: #ffffff;
 }
 
 #sidebardesativ {
+  
   width: 210px;
   position: fixed;
   top: 0;
@@ -246,13 +269,26 @@ $teste: #ffffff;
 }
 
 .item-sidebar {
+  font-family: 'Ubuntu', sans-serif;
   background-color: rgb(169, 209, 142);
   height: 40px;
   width: 100%;
   padding-top: 8px;
   padding-left: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
+
+.item-sidebar:hover {
+  background-color: $roxo;
+  height: 40px;
+  width: 100%;
+  padding-top: 8px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+
 
 .item-sidebar a {
   color: $teste;
@@ -281,11 +317,16 @@ color:rgb(171, 91, 153)
 
 }
 
-/* .overlay {
+.overlayOut{
+ display: none;
+  z-index: 0;
+}
+
+.overlayIn {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 800;
-} */
+} 
 </style>

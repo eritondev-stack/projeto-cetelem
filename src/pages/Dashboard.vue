@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12"></div>
        
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">ITGov</div>
           <div class="box2 d-flex justify-content-center">
             <img
@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">Orçamento</div>
           <div class="box2 d-flex justify-content-center">
             <img
@@ -47,10 +47,19 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">ITCapacity</div>
           <div class="box2 d-flex justify-content-center">
+          <img
+              v-if="itcapacity"
+              style="margin-top: 90px;"
+              height="100px;"
+              src="@/assets/Blocks.gif"
+              alt
+              srcset
+            />
             <apexchart
+              v-else
               type="area"
               :width="tamanhoItCap"
               :options="optionsITCapacity"
@@ -59,7 +68,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">Projetos</div>
           <div class="box2 d-flex justify-content-center">
             <apexchart
@@ -71,7 +80,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box2 d-flex justify-content-center">
             <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Calendarização</div>
             <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
@@ -207,7 +216,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 mt-3">
           <div class="box2 d-flex justify-content-center">
             <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
             <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
@@ -349,6 +358,7 @@ export default {
       pendente: 0,
       itgovstatus: true,
       orcastatus: true,
+      itcapacity: true,
 
       mostrar: false,
       chartData: [],
@@ -476,18 +486,18 @@ export default {
       },
       seriesITCapacity: [
         {
-          name: "series1",
-          data: [31, 40, 28, 51, 42, 109, 100]
+          name: "CTB",
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
-          name: "series2",
-          data: [11, 32, 45, 32, 34, 52, 41]
+          name: "Horas CTB",
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
       ],
       optionsITCapacity: {
         xaxis: {
           type: "string",
-          categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul"]
+          categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago", "Set", "Out", "Nov", "Dez"]
         },
         legend: {
           position: "top",
@@ -718,8 +728,75 @@ export default {
         console.log(error);
       });
 
-    window.addEventListener("resize", this.myEventHandler);
 
+  this.$http
+      .get("http://127.0.0.1:5000/resumo/itcapacity")
+      .then(response => {
+        var meses = [];
+        var ctb = [];
+        var horas = [];
+
+        response.data.forEach(element => {
+          meses.push(element.MES);
+          ctb.push(element.CTB);
+          horas.push(element.HORAS);
+        });
+
+        setTimeout(() => {
+           this.seriesITCapacity = [
+        {
+          name: "CTB",
+          data: ctb
+        },
+        {
+          name: "Horas CTB",
+          data: horas
+        }
+      ]
+
+      this.optionsITCapacity = {
+        xaxis: {
+          type: "string",
+          categories: meses
+        },
+        legend: {
+          position: "top",
+          show: true,
+          offsetY: 35
+        },
+        grid: {
+          show: false
+        },
+        yaxis: {
+          show: false
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false
+          }
+        },
+        chart: {
+          toolbar: {
+            show: false
+          },
+          offsetY: 15
+        }
+      }
+  
+        this.itcapacity = false;
+        }, 1500);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+
+
+
+
+
+
+    window.addEventListener("resize", this.myEventHandler);
     var width = document.body.clientWidth;
     if (width <= 375) {
       this.tamanhoItCap = 360;

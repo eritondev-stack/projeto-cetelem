@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import App from './pages/App'
 import Dashboard from './pages/Dashboard'
 import Upload from './pages/Upload'
+import Config from './pages/Config'
 
 
 Vue.use(Router)
@@ -16,7 +17,8 @@ export default new Router({
         {
             path: '/app', component: App, children: [
                 { path: '/dashboard', component: Dashboard },
-                { path: '/upload', component: Upload }
+                { path: '/upload', component: Upload },
+                { path: '/config', component: Config}
             ]
         },
         { path: '*', redirect: '/' }
