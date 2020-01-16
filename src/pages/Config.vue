@@ -312,6 +312,7 @@ export default {
           dias_uteis: parseInt(this.getValueMes(nMes))
         };
 
+
         this.$http
           .post("http://127.0.0.1:5000/config", dados)
           .then(response => {
