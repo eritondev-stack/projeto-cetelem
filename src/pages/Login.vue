@@ -86,7 +86,7 @@ export default {
       .catch(error => {
         console.log(error);
         this.hab = false
-        this.statusbtn = "Entrar"
+        this.statusbtn = "Vagner Teste"
         this.msgErro = "Usúario ou senha inválidos"
       });
 

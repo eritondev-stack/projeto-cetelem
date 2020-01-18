@@ -486,11 +486,11 @@ export default {
       },
       seriesITCapacity: [
         {
-          name: "CTB",
+          name: "Capacity",
           data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         },
         {
-          name: "Horas CTB",
+          name: "Horas trabalhadas",
           data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
       ],
@@ -745,11 +745,11 @@ export default {
         setTimeout(() => {
            this.seriesITCapacity = [
         {
-          name: "CTB",
+          name: "Capacity",
           data: ctb
         },
         {
-          name: "Horas CTB",
+          name: "Horas trabalhadas",
           data: horas
         }
       ]
