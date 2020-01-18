@@ -50,7 +50,7 @@
 export default {
   data() {
     return {
-      statusbtn: "Entrar",
+      statusbtn: "Vagner",
       user: null,
       password: null,
       msgErro: null,
