@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import Upload from './pages/Upload'
 import Config from './pages/Config'
 import Vermaisitgov from './pages/Vermaisitgov'
+import VermaisITCapacity from './pages/VermaisITCapacity'
 
 
 Vue.use(Router)
@@ -20,7 +21,8 @@ export default new Router({
                 { path: '/dashboard', component: Dashboard },
                 { path: '/upload', component: Upload },
                 { path: '/config', component: Config},
-                { path: '/Vermaisitgov', component: Vermaisitgov}
+                { path: '/Vermaisitgov', component: Vermaisitgov},
+                { path: '/VermaisITCapacity', component: VermaisITCapacity}
             ]
         },
         { path: '*', redirect: '/' }
