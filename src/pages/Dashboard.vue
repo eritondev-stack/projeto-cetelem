@@ -2,8 +2,8 @@
   <div class="back">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12"></div>
-       
+        <div class="col-12 mt-4"></div>
+
         <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">ITGov</div>
           <div class="box2 d-flex justify-content-center">
@@ -50,7 +50,7 @@
         <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">ITCapacity</div>
           <div class="box2 d-flex justify-content-center">
-          <img
+            <img
               v-if="itcapacity"
               style="margin-top: 90px;"
               height="100px;"
@@ -324,13 +324,6 @@
                 </tbody>
               </table>
             </div>
-            <!--<GChart
-                  :settings="{ packages: ['geochart'], mapsApiKey: 'AIzaSyDGPlV-Cw-p_WFVDj-CTd7QSph-lyVQIPE' }"
-                  type="GeoChart"
-                  :data="chartData"
-                  :options="chartOptions"
-                  width="300px"
-            />-->
           </div>
         </div>
       </div>
@@ -497,7 +490,20 @@ export default {
       optionsITCapacity: {
         xaxis: {
           type: "string",
-          categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago", "Set", "Out", "Nov", "Dez"]
+          categories: [
+            "Jan",
+            "Fev",
+            "Mar",
+            "Abr",
+            "Mai",
+            "Jun",
+            "Jul",
+            "Ago",
+            "Set",
+            "Out",
+            "Nov",
+            "Dez"
+          ]
         },
         legend: {
           position: "top",
@@ -698,9 +704,8 @@ export default {
             plotOptions: {
               bar: {
                 dataLabels: {
-               hideOverflowingLabels: false,
-
-               },
+                  hideOverflowingLabels: false
+                },
                 horizontal: false
               }
             },
@@ -728,8 +733,7 @@ export default {
         console.log(error);
       });
 
-
-  this.$http
+    this.$http
       .get("http://127.0.0.1:5000/resumo/itcapacity")
       .then(response => {
         var meses = [];
@@ -742,59 +746,55 @@ export default {
           horas.push(element.HORAS);
         });
 
-        setTimeout(() => {
-           this.seriesITCapacity = [
-        {
-          name: "Capacity",
-          data: ctb
-        },
-        {
-          name: "Horas trabalhadas",
-          data: horas
-        }
-      ]
+        console.log(ctb);
 
-      this.optionsITCapacity = {
-        xaxis: {
-          type: "string",
-          categories: meses
-        },
-        legend: {
-          position: "top",
-          show: true,
-          offsetY: 35
-        },
-        grid: {
-          show: false
-        },
-        yaxis: {
-          show: false
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false
-          }
-        },
-        chart: {
-          toolbar: {
-            show: false
-          },
-          offsetY: 15
-        }
-      }
-  
-        this.itcapacity = false;
+        setTimeout(() => {
+          this.seriesITCapacity = [
+            {
+              name: "Capacity",
+              data: ctb
+            },
+            {
+              name: "Horas trabalhadas",
+              data: horas
+            }
+          ];
+
+          this.optionsITCapacity = {
+            xaxis: {
+              type: "string",
+              categories: meses
+            },
+            legend: {
+              position: "top",
+              show: true,
+              offsetY: 35
+            },
+            grid: {
+              show: false
+            },
+            yaxis: {
+              show: false
+            },
+            plotOptions: {
+              bar: {
+                horizontal: false
+              }
+            },
+            chart: {
+              toolbar: {
+                show: false
+              },
+              offsetY: 15
+            }
+          };
+
+          this.itcapacity = false;
         }, 1500);
       })
       .catch(error => {
         console.log(error);
       });
-
-
-
-
-
-
 
     window.addEventListener("resize", this.myEventHandler);
     var width = document.body.clientWidth;
@@ -940,8 +940,6 @@ td {
 body {
   background-color: #dbdbdb;
 }
-
-
 
 /* width */
 ::-webkit-scrollbar {

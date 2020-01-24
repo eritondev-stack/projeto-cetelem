@@ -6,8 +6,10 @@ import App from './pages/App'
 import Dashboard from './pages/Dashboard'
 import Upload from './pages/Upload'
 import Config from './pages/Config'
-import Vermaisitgov from './pages/Vermaisitgov'
-import VermaisITCapacity from './pages/VermaisITCapacity'
+import VerMaisGov from './pages/VerMaisGov'
+import VerMaisCapacity from './pages/VerMaisCapacity'
+import VerMaisProjetos from './pages/VerMaisProjetos'
+import ProjetoSroll from './pages/ProjetoSroll'
 
 
 Vue.use(Router)
@@ -21,8 +23,10 @@ export default new Router({
                 { path: '/dashboard', component: Dashboard },
                 { path: '/upload', component: Upload },
                 { path: '/config', component: Config},
-                { path: '/Vermaisitgov', component: Vermaisitgov},
-                { path: '/VermaisITCapacity', component: VermaisITCapacity}
+                { path: '/vermaisgov', component: VerMaisGov},
+                { path: '/vermaiscapacity', component: VerMaisCapacity},
+                { path: '/vermaisprojetos', component: VerMaisProjetos},
+                { path: '/projetosroll', component: ProjetoSroll}
             ]
         },
         { path: '*', redirect: '/' }
