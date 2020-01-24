@@ -63,7 +63,7 @@
           <div class="card-body">
             <div class="box-capacity">
               <i class="fas fa-map-marker-alt fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">What's title?</h3>
+              <h3 class="d-inline ml-3 text-success">Staff por Area</h3>
               <div>
                 <div class="container-fluid">
                   <dic class="row">
@@ -111,17 +111,29 @@
           <div class="card-body">
             <div class="box-capacity">
               <i class="fas fa-calendar-alt fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">Capacity Real Δ</h3>
-            <div class="mt-4 ml-5">
+              <h3 class="d-inline ml-3 text-success">Capacity X Real</h3>
+              <div class="mt-4 ml-5">
+           
+                <span class="ml-4">Capacity</span>
+                <span class="ml-2">Real</span>
+                <span class="ml-2">Delta</span>
+                
+                
+              </div>
+            <div class="mt-1 ml-5">
            
                 <span class="ml-1">CTB:</span>
-                <span class="badge badge-success ml-2">12</span>
+                <span class="badge badge-success ml-2">8.763</span>
+                <span class="badge badge-success ml-2">8.000</span>
+                <span class="badge badge-success ml-2">764</span>
               </div>
 
               <div class="mt-3 ml-5">
         
                 <span class="ml-1">RTB:</span>
-                <span class="badge badge-success ml-2">12</span>
+                <span class="badge badge-success ml-2">9.645</span>
+                <span class="badge badge-success ml-2">9.000</span>
+                <span class="badge badge-success ml-2">645</span>
               </div>
             </div>
           </div>
@@ -161,10 +173,10 @@
               Procurar:
               <br />
               <input type="string" style="width: 170px; text-align: center;" />
-              <button type="button">Ver</button>
+              <button type="button" onclick="window.location.href = 'http://localhost:8080/VertodosItCapacity';">Ver</button>
               <br />
               <br />
-              <button type="button">Ver Todos</button>
+              <button type="button" onclick="window.location.href = 'http://localhost:8080/VertodosItCapacity';">Ver Todos</button>
               <button type="button">Exportar</button>
             </div>
           </div>

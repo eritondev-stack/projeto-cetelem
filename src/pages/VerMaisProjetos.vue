@@ -6,8 +6,10 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <h4>Projetos por categoria</h4>
+              <h3 class="d-inline ml-3 text-success">Projetos por Categoria</h3>
+              
               <!-- Aqui é uma view da tabela projetos, com a quantidade de projetos pela coluna N (PMS SEGMENTS) -->
+
               <img
                 style="margin-top:-20px float:left;"
                 height="190px;"
@@ -21,7 +23,8 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <h4>Projetos por PM</h4>
+              <h3 class="d-inline ml-3 text-success">Projetos por PM</h3>
+              
               <!-- Aqui é uma view da tabela projetos, com a quantidade de projetos pela coluna K (DEMAND MANAGER) -->
               <img
                 style="margin-top:-20px float:left;"
@@ -35,7 +38,8 @@
       <div class="col-lg-4 col-md-6 mt-3">
         <div class="card">
           <div class="card-body">
-            <h4>Projetos por Status</h4>
+            <h3 class="d-inline ml-3 text-success">Projetos por Status</h3>
+            
             <!-- Aqui é uma view da tabela projetos, com a quantidade de projetos pela coluna X (Status) -->
             <img
               style="margin-top:-20px float:left;"
@@ -54,7 +58,8 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <h4>Projetos por Fase</h4>
+              <h3 class="d-inline ml-3 text-success">Projetos por Fase</h3>
+              
               <!-- Aqui é uma view da tabela projetos, com a quantidade de projetos pela coluna Y (Phase - Level 1) -->
               <img
                 style="margin-top:-20px float:left;"
@@ -69,14 +74,24 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <img style="margin-top:-20px float:left;" height="100px;" src="@/assets/budget.png" />
-              <h4>Budget X Real</h4>
-              <table border="1">
+              <i class="fas fa-hand-holding-usd fa-4x" style="color: rgb(0, 176, 90)"></i>
+            
+              <h3 class="d-inline ml-3 text-success">Planejado X Real</h3>
+              <table  class="mt-3">
                 <tr>
                   <!-- Esse número de budget é a soma da coluna AJ (Inicial Multi-year Budget), o número de real é a soma da coluna AL(Multi Year actuals) -->
-                  <td>Budget: 34.000K</td>
-                  <td>Real: 53.000K</td>
-                  <td>Delta: 140%</td>
+                  <td><span class="ml-4">Budget:</span>
+                  <span class="badge badge-success ml-4">34.000K</span>
+                  </td>
+
+                  <td>
+                    <span class="ml-4">Real:</span>
+                  <span class="badge badge-success ml-4">35.800K</span>
+                    
+                    </td>
+                  <td><span class="ml-4">Delta:</span>
+                  <span class="badge badge-success ml-4">140%</span>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -86,14 +101,27 @@
       <div class="col-lg-4 col-md-6 mt-3">
         <div class="card">
           <div class="card-body">
-            <img style="margin-top:-20px float:left;" height="100px;" src="@/assets/daily_rate.png" />
+            <i class="fas fa-euro-sign fa-4x" style="color: rgb(0, 176, 90)"></i>
+            <h3 class="d-inline ml-3 text-success">Referência</h3>
             <div>
-              <table border="1">
+              <table  class="mt-3">
                 <tr>
-                  <td>Daily rate used:0,373 Euros</td>
-                  <td>Latest Exchange rate: 3,35</td>
+                  <!-- Esse número de budget é a soma da coluna AJ (Inicial Multi-year Budget), o número de real é a soma da coluna AL(Multi Year actuals) -->
+                  <td><span class="ml-1">Daily rate used:</span>
+                  <span class="badge badge-success ml-5">0,373</span>
+                  </td>
+
+                  <td>
+                    <span class="ml-1">Exchange rate used:</span>
+                  <span class="badge badge-success ml-5">3,3545</span>
+                    
+                    </td>
+                  
                 </tr>
               </table>
+
+
+              
             </div>
           </div>
         </div>

@@ -10,6 +10,9 @@ import VerMaisGov from './pages/VerMaisGov'
 import VerMaisCapacity from './pages/VerMaisCapacity'
 import VerMaisProjetos from './pages/VerMaisProjetos'
 import ProjetoSroll from './pages/ProjetoSroll'
+import VertodosItCapacity from './pages/VertodosItCapacity'
+import SIO from './pages/SIO'
+import VerMaisOrcamento from './pages/VerMaisOrcamento'
 
 
 Vue.use(Router)
@@ -26,7 +29,11 @@ export default new Router({
                 { path: '/vermaisgov', component: VerMaisGov},
                 { path: '/vermaiscapacity', component: VerMaisCapacity},
                 { path: '/vermaisprojetos', component: VerMaisProjetos},
-                { path: '/projetosroll', component: ProjetoSroll}
+                { path: '/projetosroll', component: ProjetoSroll},
+                { path: '/VertodosItCapacity', component: VertodosItCapacity},
+                { path: '/SIO', component: SIO},
+                { path: '/VerMaisOrcamento', component: VerMaisOrcamento}
+                 
             ]
         },
         { path: '*', redirect: '/' }
