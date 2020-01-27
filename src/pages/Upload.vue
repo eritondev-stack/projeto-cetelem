@@ -1,9 +1,51 @@
 <template>
-  <v-content>
-    <v-container fluid>
-      <v-row>
+  <content>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-5">
+      <!-- <div class="col-lg-6 col-md-12 mt-3"> -->
+        <div class="card">
+          <div class="card-body">
+            <div>
+               <i class="fas fa-upload fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-3 text-success">Upload</h4>
+      
         <v-col cols="12" md="6">
           <form>
+            <table>
+                
+                <tr>
+                  <td colspan="3">Upload IT Capacity</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+                <tr>
+                  <td colspan="3">Upload IT Governance</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+                <tr>
+                  <td colspan="3">Upload IT Orçamento</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+                <tr>
+                  <td colspan="3">Upload Horas JIRA</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+                <tr>
+                  <td colspan="3">Upload ITPP</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+                <tr>
+                  <td colspan="3">Upload Estimativa de Projeto</td>
+                  <td><button type="button">Upload</button></td>
+                  
+                </tr>
+              </table>
           <v-file-input v-model="file" name="image" class="mt-5" label="File input"></v-file-input>
     <v-progress-linear
       v-model="percentual"
@@ -18,9 +60,15 @@
           <v-btn :disabled="desabiltado" class="mt-3" @click="importarArquivo()" color="primary" block>Realizar Upload</v-btn>
         </v-col>
         <v-col cols="12" md="6"></v-col>
-      </v-row>
-    </v-container>
-  </v-content>
+          </div>
+        </div>
+    </div>
+      </div>
+      </div>  
+      </div>
+    
+    
+  </content>
 </template>
 
 <script>

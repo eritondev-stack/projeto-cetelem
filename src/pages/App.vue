@@ -47,6 +47,15 @@
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
+      <div v-show="show3" class="item-sidebar">
+       <a href="http://localhost:8080/projetosroll"><i style="font-size: 24px;" class="far fa-calendar-check mr-2"></i>SIO</a>
+      </div>
+    </transition>
+
+    <transition
+      enter-active-class="animated bounceInLeft"
+      leave-active-class="animated bounceOutLeft"
+    >
       <router-link tag="div" to="/config" v-show="show4" class="item-sidebar">
        <a><i style="font-size: 24px;" class="fas fa-cog mr-2"></i>Config</a>
       </router-link>

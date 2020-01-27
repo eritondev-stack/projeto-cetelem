@@ -42,7 +42,7 @@
           <div class="card-body">
             <div class="box-capacity">
               <i class="fas fa-users fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">Total Staff</h3>
+              <h4 class="d-inline ml-3 text-success">Total Staff</h4>
               <div class="mt-4 ml-5">
                 <i class="fas fa-male fa-2x" style="color: blue;"></i>
                 <span class="ml-1">Masculino:</span>
@@ -63,7 +63,7 @@
           <div class="card-body">
             <div class="box-capacity">
               <i class="fas fa-map-marker-alt fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">Staff por Area</h3>
+              <h4 class="d-inline ml-3 text-success">Staff por Area</h4>
               <div>
                 <div class="container-fluid">
                   <dic class="row">
@@ -111,7 +111,7 @@
           <div class="card-body">
             <div class="box-capacity">
               <i class="fas fa-calendar-alt fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">Capacity X Real</h3>
+              <h4 class="d-inline ml-3 text-success">Capacity X Real</h4>
               <div class="mt-4 ml-5">
            
                 <span class="ml-4">Capacity</span>
@@ -148,8 +148,8 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <i class="fas fa-cogs fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">asdasdasd</h3>
+              <i class="fas fa-user-clock fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-3 text-success">Lançamento de horas</h4>
             </div>
           </div>
         </div>
@@ -162,7 +162,42 @@
       <div class="col-lg-9 col-md-12 mt-3">
         <div class="card">
           <div class="card-body">
-            <div>Não lançam horas:</div>
+            <div>
+            <i class="fas fa-exclamation-triangle fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-3 text-success">Não lançam horas</h4>
+                <br>
+                <br>
+
+            <table style="width: 100%" class="mx-auto" border="2">
+
+                <thead>
+                  
+                  <tr>
+                    <th class="title">Nome</th>
+                    <th class="title">Area</th>
+                    
+                  </tr>
+                </thead>
+
+                <tbody>
+                
+                  <tr>
+                    <td>Vagner Rocha</td>
+                    <td class="pl-1">PMO</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-1">João Maria</td>
+                    <td class="pl-1">Infraestrutura</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-1">Marcelo Gomes da Silva</td>
+                    <td class="pl-1">IT Security</td>
+                   </tr>
+
+                </tbody>
+                </table>
+
+            </div>
           </div>
         </div>
       </div>
@@ -170,7 +205,9 @@
         <div class="card">
           <div class="card-body">
             <div>
-              Procurar:
+              <i class="fas fa-search fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-3 text-success">Procurar</h4>
+              
               <br />
               <input type="string" style="width: 170px; text-align: center;" />
               <button type="button" onclick="window.location.href = 'http://localhost:8080/VertodosItCapacity';">Ver</button>
@@ -250,5 +287,18 @@ body {
 
 .text-information {
   color: rgb(93, 93, 93);
+}
+th {
+  background: rgb(0, 176, 90);
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+td {
+  background: rgb(255, 255, 255);
+  color: black;
+  text-align: center;
+  font-size: 10px;
+  border: 1px solid rgb(220, 220, 220);
 }
 </style>

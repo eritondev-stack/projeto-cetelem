@@ -38,7 +38,7 @@
         <div class="card">
           <div class="card-body d-flex justify-content-center">
               <i class="fas fa-info fa-3x" style="color: rgb(0, 176, 90)"></i>
-            <h3 class="d-inline ml-1 text-success">Resumo:</h3>
+            <h4 class="d-inline ml-1 text-success">Resumo:</h4>
             <div class="mt-2 ml-1">
             <table  class="mt-3">
                 <tr>
@@ -66,7 +66,7 @@
           <div class="card-body d-flex justify-content-center">
               
                 <i class="fas fa-eye fa-3x" style="color: rgb(0, 176, 90)"></i>
-            <h3 class="d-inline ml-1 text-success">Visão:</h3>
+            <h4 class="d-inline ml-1 text-success">Visão:</h4>
 
      <table  class="mt-3">
                 <tr>
@@ -120,8 +120,8 @@
         <div class="card">
           <div class="card-body">
             <div class="box-capacity">
-              
-              <h3 class="d-inline ml-3 text-success">Ilon</h3>
+              <i class="fas fa-heart fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Ilon</h4>
               <div class="mt-0 ml-1">
                 
 
@@ -170,37 +170,59 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-md-6 mt-3">
+      <div class="col-lg-4 col-md-6 mt-3">
         <div class="card">
           <div class="card-body">
             <div class="box-capacity">
-              
-              <h3 class="d-inline ml-3 text-success">Main View</h3>
+                <i class="fas fa-superscript fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Main View</h4>
               <div>
                 <div class="container-fluid">
-                  <dic class="row">
+                  <div class="row">
                     <div class="col-6">
                       <div class="mt-4">
                           <img
               style="margin-top:-10px float:left;"
               height="100px;"
               src="@/assets/Budget1.png"
-            />
-                        
+                          />     
                       </div>
-
                       </div>
-                    
-                  </dic>
+                    </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
-      
+
+        <div class="col-lg-4 col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="box-capacity">
+                <i class="fas fa-walking fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Previsão Landing</h4>
+              <div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="mt-4">
+                          <img
+              style="margin-top:-10px float:left;"
+              height="100px;"
+              src="@/assets/Budget1.png"
+                          />     
+                      </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+
     </div>
-    
   </div>
 
   <div class="container">
@@ -209,9 +231,47 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <i class="fas fa-cogs fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">asdasdasd</h3>
+              <i class="fas fa-search-plus fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Maiores Fornecedores</h4>
             </div>
+
+                 <table  class="mt-0">
+                <tr>
+                  <td>Categoria ILon:</td>
+                  <td>Budget:</td>
+                  <td>Real:</td>
+                  <td>Delta:</td>
+                 </tr>
+                 <tr>
+                  
+                  <td>Premisses Exp</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  
+                  </tr>
+                  <tr>
+                      <td>SOmething else</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+                  <tr>
+                  <td>Other someting</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+                  <tr>
+                      <td>Outros</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+
+                  
+     </table>
+     
           </div>
         </div>
       </div>
@@ -219,9 +279,53 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <i class="fas fa-cogs fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">asdasdasd</h3>
+              <i class="fas fa-money-bill-alt fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Visão Cash</h4>
             </div>
+
+            <table  class="mt-0">
+                <tr>
+                  <td>Opex:</td>
+                  <td>Depreciação:</td>
+                  <td>Capex:</td>
+                  <td>Cash:</td>
+                 </tr>
+                 <tr>
+                  
+                  <td>Bruno</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  
+                  </tr>
+                  <tr>
+                      <td>Helio</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+                  <tr>
+                  <td>Marcel</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+                  <tr>
+                      <td>Felix</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+                  <tr>
+                      <td>Guedes</td>
+                  <td><span class="badge badge-success ml-1">54.000</span></td>
+                  <td><span class="badge badge-success ml-1">53.000</span></td>
+                  <td><span class="badge badge-success ml-1">3.000</span></td>
+                  </tr>
+
+                  
+     </table>
+
           </div>
         </div>
       </div>
@@ -230,9 +334,17 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <i class="fas fa-cogs fa-3x" style="color: rgb(0, 176, 90)"></i>
-              <h3 class="d-inline ml-3 text-success">asdasdasd</h3>
+              <i class="fas fa-box-open fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">Opex X Depreciação</h4>
             </div>
+
+            <img
+              style="margin-top:-10px float:left;"
+              height="100px;"
+              src="@/assets/Budget1.png"
+                          />     
+
+
           </div>
         </div>
       </div>
@@ -245,7 +357,21 @@
       <div class="col-lg-12 col-md-12 mt-3">
         <div class="card">
           <div class="card-body">
-            <div>Não lançam horas:</div>
+
+              <div>
+              <i class="fas fa-project-diagram fa-3x" style="color: rgb(0, 176, 90)"></i>
+              <h4 class="d-inline ml-1 text-success">DSC e Visir</h4>
+
+              <!-- Aqui entram 2 gráficos, 1 abaixo do outro:
+              DSC e Visir Opex total
+              DSC e visir Depreciação -->
+               <br>
+               <br>
+              
+              <button type="button">Exportar</button>
+            </div>
+
+            
           </div>
         </div>
       </div>
@@ -319,4 +445,7 @@ body {
 .text-information {
   color: rgb(93, 93, 93);
 }
+
+
+
 </style>

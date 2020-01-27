@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 mt-3">
-          <div class="box-title-cal2">ITGov</div>
+          <div class="box-title-cal2">IT Governance - Subsidiary Benchmark</div>
           <div class="box2">
             <GChart
               :settings="{ packages: ['geochart'], mapsApiKey: 'AIzaSyDGPlV-Cw-p_WFVDj-CTd7QSph-lyVQIPE' }"
@@ -180,11 +180,15 @@
                   </tr>
                 </tbody>
               </table>
+              <br>
+              
+              <button type="button">Exportar</button>
             </div>
           </div>
         </div>
         <div class="col-md-6 mt-5">
           <!-- Outra tabela -->
+          
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-body">
             <div>
-              <h3>Projeto 1</h3>
+              <h4 class="d-inline ml-3 text-success">Projeto 1</h4>
               <table>
                 <tr>
                   <td rowspan="3" class="titulolado">IC1</td>
@@ -24,12 +24,16 @@
                     <input type="date" style="width: 170px; text-align: center;" />
                   </td>
                 </tr>
+              </table>
+              <br>
+              <table>
+
 
                 <tr>
                   <td rowspan="12" class="titulolado">ITVC</td>
                 </tr>
                 <tr>
-                  <td colspan="5" align="center" class="titulo1">Documentos para o Colec</td>
+                  <td colspan="6" align="center" class="titulo1">Documentos para o Colec</td>
                 </tr>
                 <!-- Caso alguém fez um upload, está ok, senão , estão NOK -->
                 <tr>
@@ -91,7 +95,7 @@
                 </tr>
 
                 <tr>
-                  <td colspan="5" align="center" class="titulo1">Apresentação VC</td>
+                  <td colspan="6" align="center" class="titulo1">Apresentação VC</td>
                 </tr>
                 <tr>
                   <td colspan="3">Apresentação PSD .ppt</td>
@@ -119,6 +123,7 @@
                 </tr>
                 <tr>
                   <td colspan="3">Envio ATA do VC</td>
+                
                   <td>
                     <input type="date" style="width: 170px; text-align: center;" />
                   </td>
@@ -129,7 +134,12 @@
                     <button type="button">Upload</button>
                   </td>
                 </tr>
-
+              
+              </table>
+              <br>
+              
+              <table>
+              
                 <tr>
                   <td rowspan="5" class="titulolado">IC2</td>
                 </tr>

@@ -5,7 +5,11 @@
         <div class="col-12 mt-4"></div>
 
         <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box-title-cal2">ITGov</div>
+          <div class="box-title-cal2">ITGOV
+
+            
+          </div>
+          
           <div class="box2 d-flex justify-content-center">
             <img
               v-if="itgovstatus"
@@ -23,7 +27,10 @@
               :options="chartOptions2"
               :series="series"
             />
+            
+            
           </div>
+           
         </div>
 
         <div class="col-lg-4 col-md-6 mt-3">
