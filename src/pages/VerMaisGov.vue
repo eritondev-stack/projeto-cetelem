@@ -52,122 +52,122 @@
 
                   <tr>
                     <td>IT Governance</td>
-                    <td class="pl-2">Projects</td>
-                    <td class="pl-3">Bruno Henrique</td>
-                    <td class="pl-4">ITG0011,ITG0012,ITG0013</td>
-                    <td class="pl-5">100%</td>
-                    <td class="pl-6">95%</td>
-                    <td class="pl-7">95%</td>
+                    <td>Projects</td>
+                    <td>Bruno Henrique</td>
+                    <td>ITG0011,ITG0012,ITG0013</td>
+                    <td>100%</td>
+                    <td>95%</td>
+                    <td>95%</td>
                   </tr>
 
                   <tr>
                     <td>IT Governance</td>
-                    <td class="pl-2">Asset Mgm</td>
-                    <td class="pl-3">Fabiano Felix</td>
-                    <td class="pl-4">ITG0031,ITG0032</td>
-                    <td class="pl-5">100%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>Asset Mgm</td>
+                    <td>Fabiano Felix</td>
+                    <td>ITG0031,ITG0032</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Governance</td>
-                    <td class="pl-2">IT Costs</td>
-                    <td class="pl-3">Bruno Henrique</td>
-                    <td class="pl-4">ITG0043</td>
-                    <td class="pl-5">90%</td>
-                    <td class="pl-6">90%</td>
-                    <td class="pl-7">100%</td>
+                    <td>IT Costs</td>
+                    <td>Bruno Henrique</td>
+                    <td>ITG0043</td>
+                    <td>90%</td>
+                    <td>90%</td>
+                    <td>100%</td>
                   </tr>
 
                   <tr>
                     <td>IT Governance</td>
-                    <td class="pl-2">Sourcing</td>
-                    <td class="pl-3">Felipe de Carvalho</td>
-                    <td class="pl-4">ITG0044</td>
-                    <td class="pl-5">80%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">80%</td>
+                    <td>Sourcing</td>
+                    <td>Felipe de Carvalho</td>
+                    <td>ITG0044</td>
+                    <td>80%</td>
+                    <td>100%</td>
+                    <td>80%</td>
                   </tr>
                   <tr>
                     <td>IT Governance</td>
-                    <td class="pl-2">Resources</td>
-                    <td class="pl-3">Bruno Henrique</td>
-                    <td class="pl-4">ITG0048</td>
-                    <td class="pl-5">80%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">80%</td>
+                    <td>Resources</td>
+                    <td>Bruno Henrique</td>
+                    <td>ITG0048</td>
+                    <td>80%</td>
+                    <td>100%</td>
+                    <td>80%</td>
                   </tr>
                   <tr>
                     <td>IT ADM</td>
-                    <td class="pl-2">ADM</td>
-                    <td class="pl-3">Felipe de Carvalho</td>
-                    <td class="pl-4">ITG0047</td>
-                    <td class="pl-5">80%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">80%</td>
+                    <td>ADM</td>
+                    <td>Felipe de Carvalho</td>
+                    <td>ITG0047</td>
+                    <td>80%</td>
+                    <td>100%</td>
+                    <td>80%</td>
                   </tr>
                   <tr>
                     <td>IT Risk</td>
-                    <td class="pl-2">Risk</td>
-                    <td class="pl-3">Helio Junji</td>
-                    <td class="pl-4">ITG0051</td>
-                    <td class="pl-5">80%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">80%</td>
+                    <td>Risk</td>
+                    <td>Helio Junji</td>
+                    <td>ITG0051</td>
+                    <td>80%</td>
+                    <td>100%</td>
+                    <td>80%</td>
                   </tr>
                   <tr>
                     <td>IT Risk</td>
-                    <td class="pl-2">ICO</td>
-                    <td class="pl-3">Fabiano Felix</td>
-                    <td class="pl-4">ITG0052</td>
-                    <td class="pl-5">50%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">50%</td>
+                    <td>ICO</td>
+                    <td>Fabiano Felix</td>
+                    <td>ITG0052</td>
+                    <td>50%</td>
+                    <td>100%</td>
+                    <td>50%</td>
                   </tr>
                   <tr>
                     <td>IT Risk</td>
-                    <td class="pl-2">CISO</td>
-                    <td class="pl-3">Helio Junji</td>
-                    <td class="pl-4">ITG0053,ITG0054</td>
-                    <td class="pl-5">93%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>CISO</td>
+                    <td>Helio Junji</td>
+                    <td>ITG0053,ITG0054</td>
+                    <td>93%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Risk</td>
-                    <td class="pl-2">Shadow IT</td>
-                    <td class="pl-3">Helio Junji</td>
-                    <td class="pl-4">ITG0055</td>
-                    <td class="pl-5">93%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>Shadow IT</td>
+                    <td>Helio Junji</td>
+                    <td>ITG0055</td>
+                    <td>93%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Architecture</td>
-                    <td class="pl-2">Architecture</td>
-                    <td class="pl-3">Marcelo Guedes</td>
-                    <td class="pl-4">ITG0042</td>
-                    <td class="pl-5">93%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>Architecture</td>
+                    <td>Marcelo Guedes</td>
+                    <td>ITG0042</td>
+                    <td>93%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Architecture</td>
-                    <td class="pl-2">Data</td>
-                    <td class="pl-3">Marcelo Guedes</td>
-                    <td class="pl-4">ITG0045</td>
-                    <td class="pl-5">93%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>Data</td>
+                    <td>Marcelo Guedes</td>
+                    <td>ITG0045</td>
+                    <td>93%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Architecture</td>
-                    <td class="pl-2">Techno</td>
-                    <td class="pl-3">Marcelo Guedes</td>
-                    <td class="pl-4">ITG0046</td>
-                    <td class="pl-5">93%</td>
-                    <td class="pl-6">100%</td>
-                    <td class="pl-7">100%</td>
+                    <td>Techno</td>
+                    <td>Marcelo Guedes</td>
+                    <td>ITG0046</td>
+                    <td>93%</td>
+                    <td>100%</td>
+                    <td>100%</td>
                   </tr>
                   <tr>
                     <td>IT Production</td>
@@ -206,15 +206,27 @@ export default {
     return {
       chartData: [
         ["Country", "Aprovadas"],
-        ["Germany", 1],
-        ["United States", 3],
-        ["Brazil", 4],
-        ["Canada", 5],
-        ["France", 6]
+        ["Spain", 100],
+        ["United Kingdom", 99],
+        ["Portugal", 99],
+        ["Mexico", 97],
+        ["France", 96],
+        ["Italy", 95],
+        ["Brazil", 94],
+        ["Belgium", 91],
+        ["Bulgaria", 89],
+        ["Hungary", 89],
+        ["Germany", 89],
+        ["Turkey", 84],
+        ["Czech Republic", 82],
+        ["Romania", 81],
+        ["Denmark", 74],
+        ["South Africa", 71],
+
       ],
       chartOptions: {
         displayMode: "markers",
-        colorAxis: { colors: ["blue", "yellow", "red"] },
+        colorAxis: { colors: ["red", "yellow", "Blue" , "Green"] },
         backgroundColor: "#ffffff"
       }
     };

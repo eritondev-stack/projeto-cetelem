@@ -36,7 +36,7 @@
       
       <div class="col-lg-3 col-md-12 mt-3">
         <div class="card">
-          <div class="card-body d-flex justify-content-center">
+          <div class="card-body">
               <i class="fas fa-info fa-3x" style="color: rgb(0, 176, 90)"></i>
             <h4 class="d-inline ml-1 text-success">Resumo:</h4>
             <div class="mt-2 ml-1">
@@ -63,10 +63,13 @@
     </div>
     <div class="col-lg-3 col-md-12 mt-3">
         <div class="card">
-          <div class="card-body d-flex justify-content-center">
+          <div class="card-body">
               
                 <i class="fas fa-eye fa-3x" style="color: rgb(0, 176, 90)"></i>
             <h4 class="d-inline ml-1 text-success">Visão:</h4>
+
+
+            
 
      <table  class="mt-3">
                 <tr>
