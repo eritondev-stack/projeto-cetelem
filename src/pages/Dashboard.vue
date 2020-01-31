@@ -929,6 +929,7 @@ td {
   box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
   color: white;
   z-index: 10;
+  cursor: pointer;
 }
 
 .box-content {

@@ -419,7 +419,7 @@ body {
   width: 70px;
   height: 70px;
   border-radius: 50px;
-  margin-left: 15px;
+  margin-left: 9px;
   margin-top: 5px;
 }
 
@@ -442,7 +442,7 @@ body {
 }
 
 .box-capacity {
-  height: 150px;
+  height: 160px;
 }
 
 .text-information {

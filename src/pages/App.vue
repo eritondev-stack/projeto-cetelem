@@ -47,9 +47,9 @@
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
-      <div v-show="show3" class="item-sidebar">
-       <a href="http://localhost:8080/projetosroll"><i style="font-size: 24px;" class="far fa-calendar-check mr-2"></i>SIO</a>
-      </div>
+      <router-link tag="div" to="/projetosroll" v-show="show3" class="item-sidebar">    
+         <a><i style="font-size: 24px;" class="fas fa-calendar-check mr-2"></i>ISO</a>
+      </router-link>
     </transition>
 
     <transition
