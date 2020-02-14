@@ -11,6 +11,8 @@ import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
 Vue.component('apexchart', VueApexCharts)
 
+import './filtros'
+
 new Vue({  
   router,
   render: h => h(App)
