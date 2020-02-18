@@ -3,333 +3,338 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 mt-4"></div>
+        <div class="d-flex justify-content-center align-items-center flex-wrap">
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div class="box-title-cal2">ITGOV</div>
 
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box-title-cal2">ITGOV
-
-            
-          </div>
-          
-          <div class="box2 d-flex justify-content-center">
-            <img
-              v-if="itgovstatus"
-              style="margin-top: 90px;"
-              height="100px;"
-              src="@/assets/Blocks.gif"
-              alt
-              srcset
-            />
-            <apexchart
-              v-else
-              class="box-content"
-              type="pie"
-              width="320"
-              :options="chartOptions2"
-              :series="series"
-            />
-            
-            
-          </div>
-           
-        </div>
-
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box-title-cal2">Orçamento</div>
-          <div class="box2 d-flex justify-content-center">
-            <img
-              v-if="orcastatus"
-              style="margin-top: 90px;"
-              height="100px;"
-              src="@/assets/Blocks.gif"
-              alt
-              srcset
-            />
-            <apexchart
-              v-else
-              type="bar"
-              :width="tamanhoOrca"
-              :options="optionsITOrca"
-              :series="seriesITOrca"
-            />
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box-title-cal2">ITCapacity</div>
-          <div class="box2 d-flex justify-content-center">
-            <img
-              v-if="itcapacity"
-              style="margin-top: 90px;"
-              height="100px;"
-              src="@/assets/Blocks.gif"
-              alt
-              srcset
-            />
-            <apexchart
-              v-else
-              type="area"
-              :width="tamanhoItCap"
-              :options="optionsITCapacity"
-              :series="seriesITCapacity"
-            />
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box-title-cal2">Projetos</div>
-          <div class="box2 d-flex justify-content-center">
-            <apexchart
-              type="bar"
-              width="410"
-              :options="optionsITProjetos"
-              :series="seriesITProjetos"
-            />
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box2 d-flex justify-content-center">
-            <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Calendarização</div>
-            <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
-              <table>
-                <thead>
-                  <th style="background-color: rgb(171, 91, 153);">Plataforma</th>
-                  <th style="background-color: rgb(171, 91, 153);">Capacity</th>
-                  <th style="background-color: rgb(171, 91, 153);">Requerido</th>
-                  <th style="background-color: rgb(171, 91, 153);" colspan="2">Delta</th>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-check-circle text-success"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cobol</td>
-                    <td>500</td>
-                    <td>600</td>
-                    <td>-100</td>
-                    <td class="retirar">
-                      <i class="fas fa-times text-danger"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="box2 d-flex justify-content-center">
+              <img
+                v-if="itgovstatus"
+                style="margin-top: 90px;"
+                height="100px;"
+                src="@/assets/Blocks.gif"
+                alt
+                srcset
+              />
+              <apexchart
+                v-else
+                class="box-content"
+                type="pie"
+                width="320"
+                :options="chartOptions2"
+                :series="series"
+              />
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 mt-3">
-          <div class="box2 d-flex justify-content-center">
-            <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
-            <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
-              <table>
-                <thead>
-                  <th style="background-color: rgb(171, 91, 153);" colspan="2">Pais</th>
-                  <th style="background-color: rgb(171, 91, 153);">Quantidade</th>
-                </thead>
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div
+              class="box-title-cal2"
+              @mouseenter="showVerMais('entrou')"
+              @mouseleave="showVerMais('saiu')"
+            >
+              <span v-if="mostrarVerMaisOrca">Orçamento</span>
 
-                <tbody>
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
-                    </td>
-                    <td class="retirar">França</td>
-                    <td>600</td>
-                  </tr>
+              <span v-else>
+                <router-link tag="span" to="/vermaisorcamento">Ver mais</router-link>
+              </span>
+            </div>
+            <div class="box2 d-flex justify-content-center">
+              <img
+                v-if="orcastatus"
+                style="margin-top: 90px;"
+                height="100px;"
+                src="@/assets/Blocks.gif"
+                alt
+                srcset
+              />
+              <apexchart
+                v-else
+                type="bar"
+                :width="tamanhoOrca"
+                :options="optionsITOrca"
+                :series="seriesITOrca"
+              />
+            </div>
+          </div>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Brasil</td>
-                    <td>600</td>
-                  </tr>
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div class="box-title-cal2">ITCapacity</div>
+            <div class="box2 d-flex justify-content-center">
+              <img
+                v-if="itcapacity"
+                style="margin-top: 90px;"
+                height="100px;"
+                src="@/assets/Blocks.gif"
+                alt
+                srcset
+              />
+              <apexchart
+                v-else
+                type="area"
+                :width="tamanhoItCap"
+                :options="optionsITCapacity"
+                :series="seriesITCapacity"
+              />
+            </div>
+          </div>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Estados Unidos</td>
-                    <td>600</td>
-                  </tr>
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div class="box-title-cal2">Projetos</div>
+            <div class="box2 d-flex justify-content-center">
+              <apexchart
+                type="bar"
+                width="410"
+                :options="optionsITProjetos"
+                :series="seriesITProjetos"
+              />
+            </div>
+          </div>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Espanha</td>
-                    <td>600</td>
-                  </tr>
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div class="box2 d-flex justify-content-center">
+              <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Calendarização</div>
+              <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
+                <table>
+                  <thead>
+                    <th style="background-color: rgb(171, 91, 153);">Plataforma</th>
+                    <th style="background-color: rgb(171, 91, 153);">Capacity</th>
+                    <th style="background-color: rgb(171, 91, 153);">Requerido</th>
+                    <th style="background-color: rgb(171, 91, 153);" colspan="2">Delta</th>
+                  </thead>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Africa do Sul</td>
-                    <td>600</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-check-circle text-success"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cobol</td>
+                      <td>500</td>
+                      <td>600</td>
+                      <td>-100</td>
+                      <td class="retirar">
+                        <i class="fas fa-times text-danger"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Reino Unido</td>
-                    <td>600</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
-                    </td>
-                    <td class="retirar">França</td>
-                    <td>600</td>
-                  </tr>
+          <div class="col-lg-4 col-md-6 mt-3">
+            <div class="box2 d-flex justify-content-center">
+              <div class="box-title-cal" style="background-color: rgb(0, 176, 90);">Aprovadas</div>
+              <div class="mt-4" style="width:100%; height:90%; overflow: auto;">
+                <table>
+                  <thead>
+                    <th style="background-color: rgb(171, 91, 153);" colspan="2">Pais</th>
+                    <th style="background-color: rgb(171, 91, 153);">Quantidade</th>
+                  </thead>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Brasil</td>
-                    <td>600</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
+                      </td>
+                      <td class="retirar">França</td>
+                      <td>600</td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Estados Unidos</td>
-                    <td>600</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Brasil</td>
+                      <td>600</td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Espanha</td>
-                    <td>600</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Estados Unidos</td>
+                      <td>600</td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Africa do Sul</td>
-                    <td>600</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Espanha</td>
+                      <td>600</td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
-                    </td>
-                    <td class="retirar">Reino Unido</td>
-                    <td>600</td>
-                  </tr>
-                </tbody>
-              </table>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Africa do Sul</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Reino Unido</td>
+                      <td>600</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/fr/shiny/64.png" />
+                      </td>
+                      <td class="retirar">França</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/br/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Brasil</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/us/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Estados Unidos</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/es/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Espanha</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/za/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Africa do Sul</td>
+                      <td>600</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <img width="30" src="https://www.countryflags.io/gb/shiny/64.png" />
+                      </td>
+                      <td class="retirar">Reino Unido</td>
+                      <td>600</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -359,6 +364,7 @@ export default {
       itgovstatus: true,
       orcastatus: true,
       itcapacity: true,
+      mostrarVerMaisOrca: true,
 
       mostrar: false,
       chartData: [],
@@ -633,6 +639,12 @@ export default {
         this.tamanhoOrca = 430;
         this.tamanhoItCap = 410;
       }
+    },
+    showVerMais(motivo) {
+      console.log(motivo);
+      console.log(event.target.innerText);
+
+      this.mostrarVerMaisOrca = !this.mostrarVerMaisOrca;
     }
   },
   created() {
