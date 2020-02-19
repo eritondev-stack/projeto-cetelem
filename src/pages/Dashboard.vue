@@ -753,7 +753,7 @@ export default {
       });
 
     this.$http
-      .get("http://127.0.0.1:5000/resumo/itcapacity")
+      .get("http://eriton.pythonanywhere.com/resumo/itcapacity")
       .then(response => {
         var meses = [];
         var ctb = [];

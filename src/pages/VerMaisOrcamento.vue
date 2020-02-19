@@ -40,6 +40,8 @@
               <img class="avatar-img" src="@/assets/guedes.png" />
               <div :class="classGuedes">Guedes</div>
             </div>
+
+            <i @click="selectGerente('total')" :class="classFiltro" style="cursor: pointer"></i>
           </div>
         </div>
       </div>
@@ -116,16 +118,15 @@
               <h4 class="d-inline ml-1 text-success">Ilon</h4>
             </div>
 
-             <div class="d-flex justify-content-center" v-if="ilonGerente.length == 0"></div>
+            <div class="d-flex justify-content-center" v-if="ilonGerente.length == 0"></div>
 
             <div class="d-flex justify-content-center" v-else-if="ilonGerente.length == 1">
-                  <table class="tabela-fornecedor">
+              <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
                     <td style="width: 600px">{{ ilonGerente[0].ILON }}</td>
                     <td style="width: 100">{{ ilonGerente[0].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
@@ -142,32 +143,10 @@
                     <td>{{ ilonGerente[1].ILON }}</td>
                     <td>{{ ilonGerente[1].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
             <div class="d-flex justify-content-center" v-else-if="ilonGerente.length == 3">
-                    <table class="tabela-fornecedor">
-                <tbody>
-                  <tr class="row-resumo">
-                    <td style="width: 600px">{{ ilonGerente[0].ILON }}</td>
-                    <td style="width: 100">{{ ilonGerente[0].REAL | formatoBr }}</td>
-                  </tr>
-
-                  <tr class="row-resumo2">
-                    <td>{{ ilonGerente[1].ILON }}</td>
-                    <td>{{ ilonGerente[1].REAL | formatoBr }}</td>
-                  </tr>
-
-                  <tr class="row-resumo">
-                    <td>{{ ilonGerente[2].ILON }}</td>
-                    <td>{{ ilonGerente[2].REAL | formatoBr }}</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <div class="d-flex justify-content-center"  v-else-if="ilonGerente.length == 4">
               <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
@@ -184,12 +163,29 @@
                     <td>{{ ilonGerente[2].ILON }}</td>
                     <td>{{ ilonGerente[2].REAL | formatoBr }}</td>
                   </tr>
-
- 
                 </tbody>
               </table>
             </div>
+            <div class="d-flex justify-content-center" v-else-if="ilonGerente.length == 4">
+              <table class="tabela-fornecedor">
+                <tbody>
+                  <tr class="row-resumo">
+                    <td style="width: 600px">{{ ilonGerente[0].ILON }}</td>
+                    <td style="width: 100">{{ ilonGerente[0].REAL | formatoBr }}</td>
+                  </tr>
 
+                  <tr class="row-resumo2">
+                    <td>{{ ilonGerente[1].ILON }}</td>
+                    <td>{{ ilonGerente[1].REAL | formatoBr }}</td>
+                  </tr>
+
+                  <tr class="row-resumo">
+                    <td>{{ ilonGerente[2].ILON }}</td>
+                    <td>{{ ilonGerente[2].REAL | formatoBr }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <div class="d-flex justify-content-center" v-else-if="ilonGerente.length == 5">
               <table class="tabela-fornecedor">
@@ -218,12 +214,10 @@
                     <td>{{ ilonGerente[4].ILON }}</td>
                     <td>{{ ilonGerente[4].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
             <div class="d-flex justify-content-center" v-else-if="ilonGerente.length > 5">
-
               <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
@@ -257,9 +251,7 @@
                   </tr>
                 </tbody>
               </table>
-
             </div>
-
           </div>
         </div>
       </div>
@@ -275,13 +267,12 @@
             <div class="d-flex justify-content-center" v-if="fornecedorGerente.length == 0"></div>
 
             <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length == 1">
-                  <table class="tabela-fornecedor">
+              <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
                     <td style="width: 600px">{{ fornecedorGerente[0].FORNECEDOR }}</td>
                     <td style="width: 100">{{ fornecedorGerente[0].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
@@ -298,32 +289,10 @@
                     <td>{{ fornecedorGerente[1].FORNECEDOR }}</td>
                     <td>{{ fornecedorGerente[1].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
             <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length == 3">
-                    <table class="tabela-fornecedor">
-                <tbody>
-                  <tr class="row-resumo">
-                    <td style="width: 600px">{{ fornecedorGerente[0].FORNECEDOR }}</td>
-                    <td style="width: 100">{{ fornecedorGerente[0].REAL | formatoBr }}</td>
-                  </tr>
-
-                  <tr class="row-resumo2">
-                    <td>{{ fornecedorGerente[1].FORNECEDOR }}</td>
-                    <td>{{ fornecedorGerente[1].REAL | formatoBr }}</td>
-                  </tr>
-
-                  <tr class="row-resumo">
-                    <td>{{ fornecedorGerente[2].FORNECEDOR }}</td>
-                    <td>{{ fornecedorGerente[2].REAL | formatoBr }}</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <div class="d-flex justify-content-center"  v-else-if="fornecedorGerente.length == 4">
               <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
@@ -340,12 +309,29 @@
                     <td>{{ fornecedorGerente[2].FORNECEDOR }}</td>
                     <td>{{ fornecedorGerente[2].REAL | formatoBr }}</td>
                   </tr>
-
- 
                 </tbody>
               </table>
             </div>
+            <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length == 4">
+              <table class="tabela-fornecedor">
+                <tbody>
+                  <tr class="row-resumo">
+                    <td style="width: 600px">{{ fornecedorGerente[0].FORNECEDOR }}</td>
+                    <td style="width: 100">{{ fornecedorGerente[0].REAL | formatoBr }}</td>
+                  </tr>
 
+                  <tr class="row-resumo2">
+                    <td>{{ fornecedorGerente[1].FORNECEDOR }}</td>
+                    <td>{{ fornecedorGerente[1].REAL | formatoBr }}</td>
+                  </tr>
+
+                  <tr class="row-resumo">
+                    <td>{{ fornecedorGerente[2].FORNECEDOR }}</td>
+                    <td>{{ fornecedorGerente[2].REAL | formatoBr }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length == 5">
               <table class="tabela-fornecedor">
@@ -374,12 +360,10 @@
                     <td>{{ fornecedorGerente[4].FORNECEDOR }}</td>
                     <td>{{ fornecedorGerente[4].REAL | formatoBr }}</td>
                   </tr>
-
                 </tbody>
               </table>
             </div>
             <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length > 5">
-
               <table class="tabela-fornecedor">
                 <tbody>
                   <tr class="row-resumo">
@@ -413,81 +397,24 @@
                   </tr>
                 </tbody>
               </table>
-
             </div>
           </div>
         </div>
       </div>
-    
-    
-    <div class="col-lg-4 col-md-6 mt-3">
-      <div class="card">
-        <div class="card-body">
-          <i class="fas fa-superscript fa-3x" style="color: rgb(0, 176, 90)"></i>
-          <h4 class="d-inline ml-1 text-success">Main View</h4>
-          <div>
-            <div class="col-6">
-              <div class="mt-4">
-                <apexchart type="bar" width="400" :options="optionsITOrca" :series="seriesITOrca" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-lg-4 col-md-6 mt-3">
-      <div class="card" style="height: 360px;">
-        <div class="card-body">
-          <i class="fas fa-walking fa-3x" style="color: rgb(0, 176, 90)"></i>
-          <h4 class="d-inline ml-1 text-success">Previsão Landing</h4>
-          <div>
-            <div class="col-6">
-              <div>
-                <apexchart
-                  type="line"
-                  width="400"
-                  :options="previsaoLadingOptions"
-                  :series="seriesLanding"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="col-lg-4 col-md-6 mt-3">
-      <div class="card" style="height: 360px;">
-        <div class="card-body">
-          <i class="fas fa-box-open fa-3x" style="color: rgb(0, 176, 90)"></i>
-          <span class="ml-3">
-            <h4 class="d-inline ml-1" style="color: #0098C0 ">Opex</h4>
-
-            <h4 class="d-inline ml-1">---</h4>
-
-            <h4 class="d-inline ml-1" style="color: #3EAE63 ">Depreciação</h4>
-          </span>
-
-          <div>
-            <div class="col-12">
-              <div class="mt-4">
-                <div class="row">
-                  <div class="col-6">
-                    <div class="depre-opex">{{ depreOpexGerente[0].OPEX | formatoBr }}</div>
-                  </div>
-
-                  <div class="col-6">
-                    <div class="depre-opex2">{{ depreOpexGerente[0].DEPRE | formatoBr }}</div>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-superscript fa-3x" style="color: rgb(0, 176, 90)"></i>
+            <h4 class="d-inline ml-1 text-success">Main View</h4>
+            <div>
+              <div class="col-6">
+                <div class="mt-4">
                   <apexchart
-                    type="donut"                
-                    :options="optionOpexDepre"
-                    :series="seriesOpexDepre"
+                    type="bar"
+                    width="400"
+                    :options="optionsITOrca"
+                    :series="seriesITOrca"
                   />
                 </div>
               </div>
@@ -495,12 +422,62 @@
           </div>
         </div>
       </div>
-    </div>
-    
-    
-    
-    </div>
 
+      <div class="col-lg-4 col-md-6 mt-3">
+        <div class="card" style="height: 360px;">
+          <div class="card-body">
+            <i class="fas fa-walking fa-3x" style="color: rgb(0, 176, 90)"></i>
+            <h4 class="d-inline ml-1 text-success">Previsão Landing</h4>
+            <div>
+              <div class="col-6">
+                <div>
+                  <apexchart
+                    type="line"
+                    width="400"
+                    :options="previsaoLadingOptions"
+                    :series="seriesLanding"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mt-3">
+        <div class="card" style="height: 360px;">
+          <div class="card-body">
+            <i class="fas fa-box-open fa-3x" style="color: rgb(0, 176, 90)"></i>
+            <span class="ml-3">
+              <h4 class="d-inline ml-1" style="color: #0098C0 ">Opex</h4>
+
+              <h4 class="d-inline ml-1">---</h4>
+
+              <h4 class="d-inline ml-1" style="color: #3EAE63 ">Depreciação</h4>
+            </span>
+
+            <div>
+              <div class="col-12">
+                <div class="mt-4">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="depre-opex">{{ depreOpexGerente[0].OPEX | formatoBr }}</div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="depre-opex2">{{ depreOpexGerente[0].DEPRE | formatoBr }}</div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <apexchart type="donut" :options="optionOpexDepre" :series="seriesOpexDepre" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </template>
@@ -518,10 +495,12 @@ export default {
       classFelix: "avatar-name",
       classGuedes: "avatar-name",
       classHelio: "avatar-name",
+      classFiltro: "fas fa-filter fa-2x ml-3",
       real: [],
       budget: [],
       totalYtd: 0,
       totalMtd: 0,
+      validarTodos: 0,
       gerenteAtual: null,
       mesRef: null,
       selectIdBudget: null,
@@ -547,7 +526,7 @@ export default {
         legend: {
           position: "top",
           show: true,
-          offsetY: 0
+          offsetY: 30
         },
         responsive: [
           {
@@ -699,33 +678,58 @@ export default {
       this.acaoSelect();
     },
     acaoSelect() {
-      var arrayFiltradoMes = this.budget.filter(dados => {
-        return (
-          dados.MES == this.mesRef &&
-          dados.GERENTE == this.gerenteAtual &&
-          dados.ID_BUDGET == this.selectAcao
-        );
-      });
+      if (this.gerenteAtual == "total") {
+        var arrayFiltradoMes = this.budget.filter(dados => {
+          return dados.MES == this.mesRef && dados.ID_BUDGET == this.selectAcao;
+        });
 
-      var arrayFiltradoAno = this.budget.filter(dados => {
-        return (
-          dados.MES <= this.mesRef &&
-          dados.GERENTE == this.gerenteAtual &&
-          dados.ID_BUDGET == this.selectAcao
-        );
-      });
+        var arrayFiltradoAno = this.budget.filter(dados => {
+          return dados.MES <= this.mesRef && dados.ID_BUDGET == this.selectAcao;
+        });
 
-      var totalAno = 0;
-      arrayFiltradoAno.forEach(dados => {
-        totalAno += dados.BUDGET;
-      });
+        var totalAno = 0;
+        arrayFiltradoAno.forEach(dados => {
+          totalAno += dados.BUDGET;
+        });
 
-      arrayFiltradoMes.forEach(item => (this.budgetMes = item.BUDGET));
+        arrayFiltradoMes.forEach(item => (this.budgetMes = item.BUDGET));
 
-      this.budgetAno = totalAno;
+        this.budgetAno = totalAno;
+      } else {
+        var arrayFiltradoMes = this.budget.filter(dados => {
+          return (
+            dados.MES == this.mesRef &&
+            dados.GERENTE == this.gerenteAtual &&
+            dados.ID_BUDGET == this.selectAcao
+          );
+        });
+
+        var arrayFiltradoAno = this.budget.filter(dados => {
+          return (
+            dados.MES <= this.mesRef &&
+            dados.GERENTE == this.gerenteAtual &&
+            dados.ID_BUDGET == this.selectAcao
+          );
+        });
+
+        var totalAno = 0;
+        arrayFiltradoAno.forEach(dados => {
+          totalAno += dados.BUDGET;
+        });
+
+        arrayFiltradoMes.forEach(item => (this.budgetMes = item.BUDGET));
+
+        this.budgetAno = totalAno;
+      }
     },
 
     selectGerente(gerente) {
+      if (gerente == "total") {
+        this.classFiltro = "fas fa-filter fa-2x ml-3";
+      } else {
+        this.classFiltro = "fas fa-filter fa-2x ml-3 roxo";
+      }
+
       this.classBruno = "avatar-name";
       this.classNuno = "avatar-name";
       this.classHelio = "avatar-name";
@@ -757,18 +761,27 @@ export default {
       this.acaoSelect();
     },
     previsaoLandingGerente(gerente) {
-      const realGerente = this.previsaoLanding.resultado_real.filter(
-        item => item.GERENTE == gerente
-      );
-      console.log(realGerente);
+      let realGerente = [];
+      let mediaGerente = [];
 
-      const mediaGerente = this.previsaoLanding.resultado_media.filter(
-        item => item.GERENTE == gerente
-      );
-      console.log(mediaGerente[0]);
+      if (gerente == "total") {
+        realGerente = this.previsaoLanding.resultado_real.filter(item => true);
+
+        mediaGerente = this.previsaoLanding.resultado_media.filter(
+          item => true
+        );
+      } else {
+        realGerente = this.previsaoLanding.resultado_real.filter(
+          item => item.GERENTE == gerente
+        );
+
+        mediaGerente = this.previsaoLanding.resultado_media.filter(
+          item => item.GERENTE == gerente
+        );
+      }
 
       var jan = realGerente[0] == undefined ? 0 : realGerente[0].DEB;
-      var fev = realGerente[1] == undefined ? m0 : realGerente[1].DEB;
+      var fev = realGerente[1] == undefined ? 0 : realGerente[1].DEB;
       var mar = realGerente[2] == undefined ? 0 : realGerente[2].DEB;
       var abr = realGerente[3] == undefined ? 0 : realGerente[3].DEB;
       var mai = realGerente[4] == undefined ? 0 : realGerente[4].DEB;
@@ -856,122 +869,205 @@ export default {
       console.log(set);
     },
     fornecedoresPorGerente(gerente) {
-      const valor = this.fornecedores.filter(valor => {
-        return valor.GERENTE == gerente;
-      });
+      if (gerente == "total") {
+        const valor = this.fornecedores.filter(valor => {
+          return true;
+        });
 
-      this.fornecedorGerente = valor;
+        this.fornecedorGerente = valor;
 
-      this.somaOutros = 0;
-      for (let i = 0; i < valor.length; i++) {
-        if (i < 5) {
-          continue;
-        } else {
-          this.somaOutros += valor[i].REAL;
+        this.somaOutros = 0;
+        for (let i = 0; i < valor.length; i++) {
+          if (i < 5) {
+            continue;
+          } else {
+            this.somaOutros += valor[i].REAL;
+          }
+        }
+      } else {
+        const valor = this.fornecedores.filter(valor => {
+          return valor.GERENTE == gerente;
+        });
+
+        this.fornecedorGerente = valor;
+
+        this.somaOutros = 0;
+        for (let i = 0; i < valor.length; i++) {
+          if (i < 5) {
+            continue;
+          } else {
+            this.somaOutros += valor[i].REAL;
+          }
         }
       }
     },
     ilonPorGerente(gerente) {
-      const valor = this.ilon.filter(valor => {
-        return valor.GERENTE == gerente;
-      });
+      if (gerente == "total") {
+        const valor = this.ilon.filter(valor => {
+          return true;
+        });
 
-      this.ilonGerente = valor;
+        this.ilonGerente = valor;
 
-      this.somaOutrosIlon = 0;
-      for (let i = 0; i < valor.length; i++) {
-        if (i < 5) {
-          continue;
-        } else {
-          this.somaOutrosIlon += valor[i].REAL;
+        this.somaOutrosIlon = 0;
+        for (let i = 0; i < valor.length; i++) {
+          if (i < 5) {
+            continue;
+          } else {
+            this.somaOutrosIlon += valor[i].REAL;
+          }
+        }
+      } else {
+        const valor = this.ilon.filter(valor => {
+          return valor.GERENTE == gerente;
+        });
+
+        this.ilonGerente = valor;
+
+        this.somaOutrosIlon = 0;
+        for (let i = 0; i < valor.length; i++) {
+          if (i < 5) {
+            continue;
+          } else {
+            this.somaOutrosIlon += valor[i].REAL;
+          }
         }
       }
     },
     selecionarDepreOpexGerente(gerente) {
-      this.depreOpexGerente = this.depreOpex.filter(
-        item => item.GERENTE == gerente
-      );
+      if (gerente == "total") {
+        this.depreOpexGerente = this.depreOpex.filter(item => true);
 
-      this.seriesOpexDepre = [
-        this.depreOpexGerente[0].DEPRE,
-        this.depreOpexGerente[0].OPEX
-      ];
+        this.seriesOpexDepre = [
+          this.depreOpexGerente[0].DEPRE,
+          this.depreOpexGerente[0].OPEX
+        ];
+      } else {
+        this.depreOpexGerente = this.depreOpex.filter(
+          item => item.GERENTE == gerente
+        );
+
+        this.seriesOpexDepre = [
+          this.depreOpexGerente[0].DEPRE,
+          this.depreOpexGerente[0].OPEX
+        ];
+      }
     },
     somaPorGerente(gerente) {
       this.totalYtd = 0;
 
-      var gerenteFuncao = gerente || "nuno parente";
-
-      this.real.forEach(item => {
-        if (item.GERENTE == gerenteFuncao) {
+      if (gerente == "total") {
+        this.real.forEach(item => {
           this.totalYtd += item.REAL;
-        }
-      });
+        });
+      } else {
+        this.real.forEach(item => {
+          if (item.GERENTE == gerente) {
+            this.totalYtd += item.REAL;
+          }
+        });
+      }
     },
     mdtPorGerente(gerente) {
-      var gerenteFuncao = gerente || "nuno parente";
-      var arraySelecionado = [];
+      if (gerente == "total") {
+        var arraySelecionado = [];
 
-      for (let i = 0; i < this.real.length; i++) {
-        var novoArray = this.real.filter(dados => {
-          return dados.MES == this.real[i].MES;
+        for (let i = 0; i < this.real.length; i++) {
+          var novoArray = this.real.filter(dados => {
+            return dados.MES == this.real[i].MES;
+          });
+
+          if (novoArray.length > 5) {
+            arraySelecionado = novoArray;
+
+            break;
+          }
+        }
+
+        var gerente1 = arraySelecionado.filter(dados => {
+          return true;
         });
 
-        if (novoArray.length > 5) {
-          arraySelecionado = novoArray;
+        this.totalMtd = gerente1[0].REAL;
+        this.mesRef = gerente1[0].MES;
+      } else {
+        var gerenteFuncao = gerente || "nuno parente";
+        var arraySelecionado = [];
 
-          break;
+        for (let i = 0; i < this.real.length; i++) {
+          var novoArray = this.real.filter(dados => {
+            return dados.MES == this.real[i].MES;
+          });
+
+          if (novoArray.length > 5) {
+            arraySelecionado = novoArray;
+
+            break;
+          }
         }
+
+        var gerente1 = arraySelecionado.filter(dados => {
+          return dados.GERENTE == gerenteFuncao;
+        });
+
+        this.totalMtd = gerente1[0].REAL;
+        this.mesRef = gerente1[0].MES;
       }
-
-      var gerente1 = arraySelecionado.filter(dados => {
-        return dados.GERENTE == gerenteFuncao;
-      });
-
-      this.totalMtd = gerente1[0].REAL;
-      this.mesRef = gerente1[0].MES;
     }
   },
   created() {
-    console.log("Cheguei created");
-    this.$http.get("http://127.0.0.1:5000/vermaisorcamento").then(response => {
-      this.real = response.data.real;
-      this.selectIdBudget = response.data.select;
-      this.budget = response.data.budget;
-      this.somaPorGerente();
-      this.mdtPorGerente();
-
-      this.selectAcao = response.data.select[0].ID_BUDGET;
-    });
+    this.$http
+      .get("http://eriton.pythonanywhere.com/vermaisorcamento")
+      .then(response => {
+        this.real = response.data.real;
+        this.selectIdBudget = response.data.select;
+        this.budget = response.data.budget;
+        this.selectAcao = response.data.select[0].ID_BUDGET;
+        this.validarTodos++;
+      });
 
     this.$http
-      .get("http://127.0.0.1:5000/vermaisorcamento/fornecedores")
+      .get("http://eriton.pythonanywhere.com/vermaisorcamento/fornecedores")
       .then(dados => {
         this.fornecedores = dados.data.real;
+
+        this.validarTodos++;
       });
 
     this.$http
-      .get("http://127.0.0.1:5000/vermaisorcamento/ilon")
+      .get("http://eriton.pythonanywhere.com/vermaisorcamento/ilon")
       .then(dados => {
         this.ilon = dados.data.ilon;
+        this.validarTodos++;
       });
 
     this.$http
-      .get("http://127.0.0.1:5000/vermaisorcamento/depreopex")
+      .get("http://eriton.pythonanywhere.com/vermaisorcamento/depreopex")
       .then(dados => {
         this.depreOpex = dados.data.depre_opex;
+        this.validarTodos++;
       });
 
     this.$http
-      .get("http://127.0.0.1:5000/vermaisorcamento/previsaolanding")
+      .get("http://eriton.pythonanywhere.com/vermaisorcamento/previsaolanding")
       .then(dados => {
         this.previsaoLanding = dados.data;
-        console.log(this.previsaoLanding);
+        this.validarTodos++;
       });
+  },
+  watch: {
+    validarTodos: function(newValue, old) {
+      if (newValue == 5) {
 
-    setTimeout(() => {
-      this.selectGerente("nuno parente");
-    }, 3000);
+        console.log("Já tenho todos os valores")
+
+        this.somaPorGerente();
+        this.mdtPorGerente();
+        this.selectGerente("total");
+      } else {
+        console.log("Estou acompanhando: " + newValue);
+      }
+    }
   }
 };
 </script>
@@ -1060,7 +1156,7 @@ body {
   width: 100%;
   height: 90px;
   background-color: #ffffff;
-  border-left: 10px solid #40e0d0;
+  border-left: 10px solid #e8a313;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -1098,24 +1194,24 @@ body {
   border-radius: 30px;
 }
 
-.row-resumo{
- border: 1px solid rgb(192, 192, 192);
-  background-color: #f6f6f6 ;
-}
-
-.row-resumo2{
-
+.row-resumo {
   border: 1px solid rgb(192, 192, 192);
-  background-color: #ffffff ;
+  background-color: #f6f6f6;
 }
 
+.row-resumo2 {
+  border: 1px solid rgb(192, 192, 192);
+  background-color: #ffffff;
+}
 
-.tabela-fornecedor{
+.tabela-fornecedor {
   margin-top: 13px;
-  height: 150px; 
-  width: 700px; 
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-
+  height: 150px;
+  width: 700px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
+.roxo {
+  color: $roxo;
+}
 </style>

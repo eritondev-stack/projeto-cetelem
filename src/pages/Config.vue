@@ -315,7 +315,7 @@ export default {
 
 
         this.$http
-          .post("http://127.0.0.1:5000/config", dados)
+          .post("http://eriton.pythonanywhere.com//config", dados)
           .then(response => {
            
            var ano = response.data.ano.substring(5, 7)
@@ -370,7 +370,7 @@ export default {
     },
     getAll(){
           this.$http
-      .get(`http://127.0.0.1:5000/config/${this.ano}`)
+      .get(`http://eriton.pythonanywhere.com/config/${this.ano}`)
       .then(response => {
         
         
