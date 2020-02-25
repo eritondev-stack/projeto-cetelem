@@ -8,14 +8,27 @@
             <div class="box-title-cal2">ITGOV</div>
 
             <div class="box2 d-flex justify-content-center">
-              <img
-                v-if="itgovstatus"
-                style="margin-top: 90px;"
-                height="100px;"
-                src="@/assets/Blocks.gif"
-                alt
-                srcset
-              />
+              <div v-if="itgovstatus" style="width: 100%; height: 100%;">
+                <div class="ph-item mt-5">
+                  <div class="ph-col-12">
+                    <div class="ph-row">
+                      <div class="ph-col-6 big"></div>
+                      <div class="ph-col-4 empty big"></div>
+                      <div class="ph-col-2 big"></div>
+                      <div class="ph-col-4"></div>
+                      <div class="ph-col-8 empty"></div>
+                      <div class="ph-col-6"></div>
+                      <div class="ph-col-6 empty"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <apexchart
                 v-else
                 class="box-content"
@@ -40,14 +53,27 @@
               </span>
             </div>
             <div class="box2 d-flex justify-content-center">
-              <img
-                v-if="orcastatus"
-                style="margin-top: 90px;"
-                height="100px;"
-                src="@/assets/Blocks.gif"
-                alt
-                srcset
-              />
+              <div v-if="orcastatus" style="width: 100%; height: 100%;">
+                <div class="ph-item mt-5">
+                  <div class="ph-col-12">
+                    <div class="ph-row">
+                      <div class="ph-col-6 big"></div>
+                      <div class="ph-col-4 empty big"></div>
+                      <div class="ph-col-2 big"></div>
+                      <div class="ph-col-4"></div>
+                      <div class="ph-col-8 empty"></div>
+                      <div class="ph-col-6"></div>
+                      <div class="ph-col-6 empty"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <apexchart
                 v-else
                 type="bar"
@@ -61,14 +87,27 @@
           <div class="col-lg-4 col-md-6 mt-3">
             <div class="box-title-cal2">ITCapacity</div>
             <div class="box2 d-flex justify-content-center">
-              <img
-                v-if="itcapacity"
-                style="margin-top: 90px;"
-                height="100px;"
-                src="@/assets/Blocks.gif"
-                alt
-                srcset
-              />
+              <div v-if="itcapacity" style="width: 100%; height: 100%;">
+                <div class="ph-item mt-5">
+                  <div class="ph-col-12">
+                    <div class="ph-row">
+                      <div class="ph-col-6 big"></div>
+                      <div class="ph-col-4 empty big"></div>
+                      <div class="ph-col-2 big"></div>
+                      <div class="ph-col-4"></div>
+                      <div class="ph-col-8 empty"></div>
+                      <div class="ph-col-6"></div>
+                      <div class="ph-col-6 empty"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                      <div class="ph-col-12"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <apexchart
                 v-else
                 type="area"

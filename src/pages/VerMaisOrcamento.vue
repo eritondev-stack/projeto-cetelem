@@ -102,9 +102,6 @@
                   </div>
                 </div>
               </div>
-              <!-- 
-  
-              <span> {{ totalYtd}}</span><span class="text-danger"> Delta: {{  totalYtd - budgetAno }}</span>-->
             </div>
           </div>
         </div>
@@ -116,6 +113,27 @@
             <div>
               <i class="fas fa-heart fa-3x" style="color: rgb(0, 176, 90)"></i>
               <h4 class="d-inline ml-1 text-success">Ilon</h4>
+            </div>
+
+            <div v-if="validarTodos != 5">
+              <div class="ph-item">
+                <div class="ph-col-12">
+                  <div class="ph-row">
+                    <div class="ph-col-6 big"></div>
+                    <div class="ph-col-4 empty big"></div>
+                    <div class="ph-col-2 big"></div>
+                    <div class="ph-col-4"></div>
+                    <div class="ph-col-8 empty"></div>
+                    <div class="ph-col-6"></div>
+                    <div class="ph-col-6 empty"></div>
+                    <div class="ph-col-12"></div>
+                    <div class="ph-col-8 empty"></div>
+                    <div class="ph-col-6"></div>
+                    <div class="ph-col-6"></div>
+
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="d-flex justify-content-center" v-if="ilonGerente.length == 0"></div>
@@ -264,6 +282,26 @@
               <h4 class="d-inline ml-1 text-success">Maiores Fornecedores</h4>
             </div>
 
+            <div v-if="validarTodos != 5">
+              <div class="ph-item">
+                <div class="ph-col-12">
+                  <div class="ph-row">
+                    <div class="ph-col-6 big"></div>
+                    <div class="ph-col-4 empty big"></div>
+                    <div class="ph-col-2 big"></div>
+                    <div class="ph-col-4"></div>
+                    <div class="ph-col-8 empty"></div>
+                    <div class="ph-col-6"></div>
+                    <div class="ph-col-6 empty"></div>
+                    <div class="ph-col-12"></div>
+                    <div class="ph-col-8 empty"></div>
+                    <div class="ph-col-6"></div>
+                    <div class="ph-col-6"></div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="d-flex justify-content-center" v-if="fornecedorGerente.length == 0"></div>
 
             <div class="d-flex justify-content-center" v-else-if="fornecedorGerente.length == 1">
@@ -865,8 +903,6 @@ export default {
           ]
         }
       ];
-
-      console.log(set);
     },
     fornecedoresPorGerente(gerente) {
       if (gerente == "total") {
@@ -1058,8 +1094,7 @@ export default {
   watch: {
     validarTodos: function(newValue, old) {
       if (newValue == 5) {
-
-        console.log("Já tenho todos os valores")
+        console.log("Já tenho todos os valores");
 
         this.somaPorGerente();
         this.mdtPorGerente();
