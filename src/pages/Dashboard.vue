@@ -663,17 +663,19 @@ export default {
   },
   created() {
     this.$http
-      .get("http://eriton.pythonanywhere.com/resumo/itgov")
+      .get("http://localhost:3000/main/itgov")
       .then(response => {
-        response.data.forEach(element => {
-          if (element.status == "REJEITADO") {
-            this.rejeitado = element.total;
-          } else if (element.status == "APROVADO") {
-            this.aprovado = element.total;
-          } else if (element.status == "NÃO ENVIADO") {
-            this.nao_enviado = element.total;
-          } else if (element.status == "PENDENTE") {
-            this.pendente = element.total;
+
+        response.data.results.forEach(element => {
+   
+          if (element.STATUS == "REJEITADO") {
+            this.rejeitado = element.TOTAL;
+          } else if (element.STATUS == "APROVADO") {
+            this.aprovado = element.TOTAL;
+          } else if (element.STATUS == "NÃO ENVIADO") {
+            this.nao_enviado = element.TOTAL;
+          } else if (element.STATUS == "PENDENTE") {
+            this.pendente = element.TOTAL;
           }
 
           setTimeout(() => {
@@ -692,14 +694,14 @@ export default {
       });
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/resumo/orcamento")
+      .get("http://localhost:3000/main/orcamento")
       .then(response => {
         var meses = [];
         var saldo_lim = [];
         var saldo_pos = [];
         var saldo_neg = [];
 
-        response.data.forEach(element => {
+        response.data.results.forEach(element => {
           meses.push(element.MES);
           saldo_lim.push(element.GASTO_LIMITADO);
           saldo_pos.push(element.SALDO_POSITIVO);
@@ -767,19 +769,21 @@ export default {
       });
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/resumo/itcapacity")
+      .get("http://localhost:3000/main/itcapacity")
       .then(response => {
         var meses = [];
         var ctb = [];
         var horas = [];
 
-        response.data.forEach(element => {
+
+
+        response.data.results.forEach(element => {
           meses.push(element.MES);
           ctb.push(element.CTB);
           horas.push(element.HORAS);
         });
 
-        console.log(ctb);
+
 
         setTimeout(() => {
           this.seriesITCapacity = [

@@ -1051,45 +1051,59 @@ export default {
       }
     }
   },
-  created() {
+  created(){
+
     this.$http
-      .get("http://eriton.pythonanywhere.com/vermaisorcamento")
+      .get("http://localhost:3000/main/vermaisorcamento")
       .then(response => {
+
         this.real = response.data.real;
         this.selectIdBudget = response.data.select;
         this.budget = response.data.budget;
         this.selectAcao = response.data.select[0].ID_BUDGET;
-        this.validarTodos++;
-      });
+        this.validarTodos++
+      })
+
+
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/vermaisorcamento/fornecedores")
+      .get("http://localhost:3000/main/fornecedores")
       .then(dados => {
+
         this.fornecedores = dados.data.real;
-
         this.validarTodos++;
-      });
+
+      })
+
+
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/vermaisorcamento/ilon")
+      .get("http://localhost:3000/main/ilon")
       .then(dados => {
+
         this.ilon = dados.data.ilon;
         this.validarTodos++;
-      });
+      })
+
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/vermaisorcamento/depreopex")
+      .get("http://localhost:3000/main/depre")
       .then(dados => {
+
         this.depreOpex = dados.data.depre_opex;
         this.validarTodos++;
-      });
+      })
+
 
     this.$http
-      .get("http://eriton.pythonanywhere.com/vermaisorcamento/previsaolanding")
+      .get("http://localhost:3000/main/previsaolanding")
       .then(dados => {
+
         this.previsaoLanding = dados.data;
         this.validarTodos++;
-      });
+
+      })
+      
   },
   watch: {
     validarTodos: function(newValue, old) {

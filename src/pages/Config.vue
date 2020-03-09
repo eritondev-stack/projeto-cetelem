@@ -282,7 +282,8 @@ export default {
     };
   },
   methods: {
-    verificar() {
+
+verificar() {
       //$("#exampleModal").modal();
 
       var meses = [
@@ -309,16 +310,22 @@ export default {
           ineficiencia: parseFloat(this.ineficiencia) / 100,
           ferias: this.ferias,
           short_friday: this.short,
-          dia_aniversario: this.dayoff,
+          niver: this.dayoff,
           dias_uteis: parseInt(this.getValueMes(nMes))
         };
 
+        console.log(dados)
+
 
         this.$http
-          .post("http://eriton.pythonanywhere.com//config", dados)
+          .post("http://localhost:3000/main/config", dados, {
+            headers: {
+            'Content-Type': 'application/json',
+        }
+          })
           .then(response => {
            
-           var ano = response.data.ano.substring(5, 7)
+            var ano = response.data.ano.substring(5, 7)
 
             if (ano == "12") {
               this.btnClass = "btn btn-primary btn-sm mt-4 btn-block";
@@ -370,17 +377,17 @@ export default {
     },
     getAll(){
           this.$http
-      .get(`http://eriton.pythonanywhere.com/config/${this.ano}`)
+      .get(`http://localhost:3000/main/config/${this.ano}`)
       .then(response => {
         
         
-        var dados = response.data
+        var dados = response.data.results
 
 
         this.horas_trabalhadas = dados[0].HORAS_TRABALHADAS
         this.ineficiencia = (dados[0].INEFICIENCIA * 100).toFixed(2)
         this.ferias = dados[0].FERIAS
-        this.dayoff = dados[0].DIA_ANIVER
+        this.dayoff = dados[0].DIA_ANIVERSARIO
         this.short = dados[0].SHORT_FRIDAY
 
         this.jan = dados[0].DIAS_UTEIS
@@ -394,10 +401,7 @@ export default {
         this.set = dados[8].DIAS_UTEIS
         this.out = dados[9].DIAS_UTEIS
         this.nov = dados[10].DIAS_UTEIS
-        this.dez = dados[11].DIAS_UTEIS
-        
-
-        
+        this.dez = dados[11].DIAS_UTEIS      
 
       })
       .catch(error => {
@@ -407,9 +411,7 @@ export default {
   },
   created() {
 
-this.getAll();
-
-
+ this.getAll();
 
   }
 };
