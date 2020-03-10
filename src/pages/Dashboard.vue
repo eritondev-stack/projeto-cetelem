@@ -663,7 +663,7 @@ export default {
   },
   created() {
     this.$http
-      .get("http://localhost:3000/main/itgov")
+      .get("main/itgov")
       .then(response => {
 
         response.data.results.forEach(element => {
@@ -694,7 +694,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:3000/main/orcamento")
+      .get("main/orcamento")
       .then(response => {
         var meses = [];
         var saldo_lim = [];
@@ -769,7 +769,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:3000/main/itcapacity")
+      .get("main/itcapacity")
       .then(response => {
         var meses = [];
         var ctb = [];

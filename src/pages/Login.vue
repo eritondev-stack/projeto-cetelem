@@ -1,39 +1,53 @@
 <template>
-<body class="back">
-    <div class="container">
-    <div class="row no-gutters">
-      <div class="col-md-6 d-none d-md-block">
-        <div class="box1">
-          <img
-            src="../assets/work1.gif"
-            style="margin-top: 50px; margin-left: 10px;"
-            class="img-fluid"
-            alt
-          />
-        </div>
-      </div>
+  <div class="back d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="box-main">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+              style="width: 100%; height: 100%;"
+            >
+              <div class="working recuo"></div>
+            </div>
 
-      <div class="col-md-6">
-        <div class="box2">
-          <div class="main-login p-1">
-            <div style="margin-top: 15px;">
-              <img
-                src="../assets/layout_set_logo.png"
-                style="width: 200px; margin-top: 50px; margin-left: 10px;"
-                class="img-fluid"
-                alt
-              />
-              <input v-model="user" class="form-control mt-4 login" type="text" placeholder="User" />
-              <input v-model="password" class="form-control mt-4 login" type="password" placeholder="Password" />
-              <button @click="irHome()" :disabled="hab" class="btn btn-sm btn-cetelem mt-4">{{ statusbtn }}</button>
-              <div class="text-danger mt-3 error">
-<!--                 
-              <div class="d-inline">
-                 <i class="fas fa-exclamation-circle fa-2x"></i> 
-              </div> -->
-               <div class="d-inline">
-                  <span style="padding-bottom: 30px;">{{ msgErro }}</span>
-               </div>
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+              style="width: 100vw;"
+            >
+              <div class="box-login">
+                <div class="centralizar">
+                  <img
+                    src="../assets/layout_set_logo.png"
+                    style="width: 200px; margin-top: 50px; margin-left: 10px;"
+                    class="img-fluid"
+                    alt
+                  />
+                </div>
+                <input
+                  v-model="user"
+                  class="form-control mt-4 login"
+                  type="text"
+                  placeholder="User"
+                />
+                <input
+                  v-model="password"
+                  class="form-control mt-4 login"
+                  type="password"
+                  placeholder="Password"
+                />
+
+                <div class="centralizar">
+                  <button
+                    @click="irHome()"
+                    :disabled="hab"
+                    class="btn btn-sm btn-cetelem mt-4"
+                  >{{ statusbtn }}</button>
+                </div>
+
+                <div class="centralizar mt-4">
+                  <div class="erro">{{ msgErro }}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -41,12 +55,11 @@
       </div>
     </div>
   </div>
-</body>
-
 </template>
 
 <script>
 /* eslint-disable */
+
 export default {
   data() {
     return {
@@ -54,107 +67,119 @@ export default {
       user: null,
       password: null,
       msgErro: null,
-      hab: false,
-
+      hab: false
     };
   },
   methods: {
     irHome() {
-  
+      this.hab = true;
+      this.statusbtn = "Carregando";
 
-    this.hab = true
-    this.statusbtn = "Carregando"
+      const usuario = {
+        id: this.user,
+        senha: this.password
+      };
 
-  const usuario = {
-    id: this.user,
-    senha: this.password
+      console.log(usuario);
+
+      if (usuario.id == "admin" && usuario.senha == "admin2019") {
+        setTimeout(() => {
+          this.hab = false;
+          this.statusbtn = "Entrar";
+
+          this.$router.push("/dashboard");
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          this.hab = false;
+          this.statusbtn = "Entrar";
+
+          this.msgErro = "Usúario ou senha inválidos";
+        }, 2000);
+
+        setTimeout(() => {
+          this.msgErro = "";
+        }, 7000);
+      }
+    }
   }
-
-    this.$http
-      .post("http://eriton.pythonanywhere.com/login", usuario)
-      .then(response => {
-      
-       console.log(response.status)
-       this.hab = false  
-       this.statusbtn = "Entrar"
-
-        if(response.status == 200){
-          this.$router.push("/dashboard")
-        }
-
-      })
-      .catch(error => {
-        console.log(error);
-        this.hab = false
-        this.statusbtn = "Entrar"
-        this.msgErro = "Usúario ou senha inválidos"
-      });
-
-      
-    },
- 
-  },
-
 };
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@media screen and (max-width: 1024px) {
+  div.box-main {
+    width: 85vw;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+    transition: 300ms;
+  }
+}
 
+@media screen and (max-width: 750px) {
+  div.recuo {
+    display: none;
+  }
 
-.back{
-  background: url('../assets/back.png');
+  div.box-login {
+    width: 95%;
+    height: 40vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 32px;
+  }
+}
+.erro {
+  color: rgb(212, 55, 55);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.centralizar {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box-main {
+  width: 60vw;
+  min-height: 390px;
+  background: rgb(255, 255, 255);
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.75);
+  transition: 300ms;
+}
+
+.working {
+  background-image: url("../assets/working.svg");
+  background-size: cover;
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  top: 30px;
+}
+
+.box-login {
+  width: 95%;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 32px;
+}
+
+.back {
+  // background: url("../assets/back.png");
+  width: 100vw;
   height: 100vh;
   background: cover;
-}
-.box1 {
-  background-color: #f7f7f7;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  text-align: center;
-  margin-top: 80px;
-  border-top-left-radius: 62px;
-  border-bottom-left-radius: 62px;
-  transition: all 0s;
-
-}
-
-.box2 {
-  padding-top: 1px;
-  background: rgb(247, 247, 247);
-  background: linear-gradient(
-    90deg,
-    rgba(247, 247, 247, 1) 0%,
-    rgba(247, 247, 247, 1) 35%,
-    rgba(247, 247, 247, 1) 100%
-  );
-
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  text-align: center;
-  margin-top: 80px;
-  border-top-right-radius: 62px;
-  border-bottom-right-radius: 62px;
-  transition: all 1s;
-}
-
-
-
-.main-login {
-  background-color: white;
-  height: 90%;
-  width: 80%;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 20px;
-  border-radius: 62px;
--webkit-box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
--moz-box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
-box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
+  background: rgb(146, 208, 80);
+  padding: 30px;
+  //background: linear-gradient(356deg, rgba(171, 91, 153,1)0%, rgb(255,255,255) 100%);
 }
 
 .form-control.login {
@@ -162,10 +187,7 @@ box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
   margin: 0 auto;
 }
 
-
-
 .btn-cetelem {
-  
   color: #fff;
   background-color: rgb(0, 176, 90);
   border-color: rgb(0, 176, 90);
@@ -182,9 +204,6 @@ box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
   color: #ffffff;
   border-color: rgb(0, 176, 90);
 }
-
-
-
 
 .form-control.login:focus {
   box-shadow: 0 0 0 0;
@@ -236,7 +255,7 @@ box-shadow: 6px 8px 8px -5px rgba(0,0,0,0.75);
   margin: 0 auto;
 }
 
-.error{
-font-family: 'Varela Round', sans-serif;
+.error {
+  font-family: "Varela Round", sans-serif;
 }
 </style>

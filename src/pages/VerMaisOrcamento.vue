@@ -1126,7 +1126,7 @@ $verde1: rgb(0, 176, 90);
 $verde1t: rgba(0, 176, 90, 0.7);
 $verde2: rgb(146, 208, 80);
 $verde3: #a9d18e;
-$roxo: #ab5b99;
+$roxo: rgb(171, 91, 153);
 $azul: rgb(131, 205, 232);
 $teste: #ffffff;
 
@@ -1205,7 +1205,7 @@ body {
   width: 100%;
   height: 90px;
   background-color: #ffffff;
-  border-left: 10px solid #e8a313;
+  border-left: 10px solid rgb(232, 163, 19);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
