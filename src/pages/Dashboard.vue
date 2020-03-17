@@ -38,8 +38,8 @@
         <div class="col-lg-4 col-md-6 col-sm-6 mt-3">
           <div
             class="box-title-cal2"
-            @mouseenter="showVerMais('entrou')"
-            @mouseleave="showVerMais('saiu')"
+            @mouseenter="VerMais('entrou')"
+            @mouseleave="VerMais('saiu')"
           >
             <span v-if="mostrarVerMaisOrca">Orçamento</span>
 
@@ -380,6 +380,21 @@ export default {
   components: {
     GChart
   },
+    async routerSend(route) {
+    
+    this.$router.push(`/${route}`).then(response =>{
+
+       console.log(route) 
+
+       if(route === "login"){
+         localStorage.removeItem("nekot")
+        }  
+            
+    }).catch(erro => {
+      console.log(erro)
+    })
+
+    },
 
   data() {
     return {
@@ -655,8 +670,6 @@ export default {
   },
   methods: {
  VerMais(motivo) {
-      console.log(motivo);
-      console.log(event.target.innerText);
 
       this.mostrarVerMaisOrca = !this.mostrarVerMaisOrca;
     }

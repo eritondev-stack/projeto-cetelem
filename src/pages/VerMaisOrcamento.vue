@@ -1054,7 +1054,7 @@ export default {
   created(){
 
     this.$http
-      .get("http://localhost:3000/main/vermaisorcamento")
+      .get("main/vermaisorcamento")
       .then(response => {
 
         this.real = response.data.real;
@@ -1067,7 +1067,7 @@ export default {
 
 
     this.$http
-      .get("http://localhost:3000/main/fornecedores")
+      .get("main/fornecedores")
       .then(dados => {
 
         this.fornecedores = dados.data.real;
@@ -1078,7 +1078,7 @@ export default {
 
 
     this.$http
-      .get("http://localhost:3000/main/ilon")
+      .get("main/ilon")
       .then(dados => {
 
         this.ilon = dados.data.ilon;
@@ -1087,7 +1087,7 @@ export default {
 
 
     this.$http
-      .get("http://localhost:3000/main/depre")
+      .get("main/depre")
       .then(dados => {
 
         this.depreOpex = dados.data.depre_opex;
@@ -1096,7 +1096,7 @@ export default {
 
 
     this.$http
-      .get("http://localhost:3000/main/previsaolanding")
+      .get("main/previsaolanding")
       .then(dados => {
 
         this.previsaoLanding = dados.data;
@@ -1199,14 +1199,18 @@ body {
   height: 90px;
   background-color: #ffffff;
   border-left: 10px solid rgb(0, 176, 90);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+   -ms-box-shadow:3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .resumo2 {
   width: 100%;
   height: 90px;
   background-color: #ffffff;
   border-left: 10px solid rgb(232, 163, 19);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+   -ms-box-shadow:3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .resumo-title {
@@ -1255,9 +1259,6 @@ body {
 
 .tabela-fornecedor {
   margin-top: 13px;
-  height: 150px;
-  width: 700px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .roxo {

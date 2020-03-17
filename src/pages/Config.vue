@@ -2,7 +2,7 @@
 <body>
   <div class="container">
     <div class="row">
-        <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
       <div class="col-md-6 mt-5">
         <div class="card">
           <div class="card-body">
@@ -216,7 +216,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <button :class="btnClass" @click="verificar()">{{ btnName }}</button>
+                  <button :disabled="btnStatus" :class="btnClass" @click="verificar()">{{ btnName }}</button>
                 </div>
               </div>
             </div>
@@ -233,23 +233,7 @@
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    ></div>
   </div>
 </body>
 </template>
@@ -257,10 +241,26 @@
 <script>
 /* eslint-disable */
 export default {
+  /* eslint-disable */
+  async routerSend(route) {
+    this.$router
+      .push(`/${route}`)
+      .then(response => {
+        console.log(route);
+
+        if (route === "login") {
+          localStorage.removeItem("nekot");
+        }
+      })
+      .catch(erro => {
+        console.log(erro);
+      });
+  },
   data() {
     return {
       btnClass: "btn btn-cetelem btn-sm mt-4 btn-block",
-      btnName: "Importar",
+      btnName: "Salvar",
+      btnStatus: false,
       ano: "2020",
       horas_trabalhadas: null,
       ineficiencia: null,
@@ -282,9 +282,10 @@ export default {
     };
   },
   methods: {
-
-verificar() {
-      //$("#exampleModal").modal();
+    verificar() {
+      this.btnName = "Salvando...";
+      this.btnStatus = true;
+      this.btnClass = "btn btn-secondary btn-sm mt-4 btn-block";
 
       var meses = [
         "jan",
@@ -314,28 +315,29 @@ verificar() {
           dias_uteis: parseInt(this.getValueMes(nMes))
         };
 
-        console.log(dados)
-
-
         this.$http
-          .post("http://localhost:3000/main/config", dados, {
+          .post("main/config", dados, {
             headers: {
-            'Content-Type': 'application/json',
-        }
+              "Content-Type": "application/json"
+            }
           })
           .then(response => {
-           
-            var ano = response.data.ano.substring(5, 7)
+            var ano = response.data.ano.substring(5, 7);
 
             if (ano == "12") {
-              this.btnClass = "btn btn-primary btn-sm mt-4 btn-block";
-              this.btnName = "Atualizado com sucesso";
-            }
+              setTimeout(() => {
+                this.btnStatus = false;
+                this.btnName = "Salvar";
+                this.btnClass = "btn btn-cetelem btn-sm mt-4 btn-block";
 
-            setTimeout(() => {
-              this.btnClass = "btn btn-cetelem btn-sm mt-4 btn-block";
-              this.btnName = "Importar";
-            }, 3000);
+                this.$toasted.success("Atualizado com sucesso", {
+                  theme: "bubble",
+                  position: "top-right",
+                  icon: "check",
+                  duration: 5000
+                });
+              }, 2000);
+            }
           })
           .catch(error => {
             console.log(error);
@@ -375,44 +377,36 @@ verificar() {
         return 0;
       }
     },
-    getAll(){
-          this.$http
-      .get(`http://localhost:3000/main/config/${this.ano}`)
-      .then(response => {
-        
-        
-        var dados = response.data.results
+    getAll() {
+      this.$http
+        .get(`main/config/${this.ano}`)
+        .then(response => {
+          var dados = response.data.results;
 
+          this.horas_trabalhadas = dados[0].HORAS_TRABALHADAS;
+          this.ineficiencia = (dados[0].INEFICIENCIA * 100).toFixed(2);
+          this.ferias = dados[0].FERIAS;
+          this.dayoff = dados[0].DIA_ANIVERSARIO;
+          this.short = dados[0].SHORT_FRIDAY;
 
-        this.horas_trabalhadas = dados[0].HORAS_TRABALHADAS
-        this.ineficiencia = (dados[0].INEFICIENCIA * 100).toFixed(2)
-        this.ferias = dados[0].FERIAS
-        this.dayoff = dados[0].DIA_ANIVERSARIO
-        this.short = dados[0].SHORT_FRIDAY
-
-        this.jan = dados[0].DIAS_UTEIS
-        this.fev = dados[1].DIAS_UTEIS
-        this.mar = dados[2].DIAS_UTEIS
-        this.abr = dados[3].DIAS_UTEIS
-        this.mai = dados[4].DIAS_UTEIS
-        this.jun = dados[5].DIAS_UTEIS
-        this.jul = dados[6].DIAS_UTEIS
-        this.ago = dados[7].DIAS_UTEIS
-        this.set = dados[8].DIAS_UTEIS
-        this.out = dados[9].DIAS_UTEIS
-        this.nov = dados[10].DIAS_UTEIS
-        this.dez = dados[11].DIAS_UTEIS      
-
-      })
-      .catch(error => {
-        
-      });
+          this.jan = dados[0].DIAS_UTEIS;
+          this.fev = dados[1].DIAS_UTEIS;
+          this.mar = dados[2].DIAS_UTEIS;
+          this.abr = dados[3].DIAS_UTEIS;
+          this.mai = dados[4].DIAS_UTEIS;
+          this.jun = dados[5].DIAS_UTEIS;
+          this.jul = dados[6].DIAS_UTEIS;
+          this.ago = dados[7].DIAS_UTEIS;
+          this.set = dados[8].DIAS_UTEIS;
+          this.out = dados[9].DIAS_UTEIS;
+          this.nov = dados[10].DIAS_UTEIS;
+          this.dez = dados[11].DIAS_UTEIS;
+        })
+        .catch(error => {});
     }
   },
   created() {
-
- this.getAll();
-
+    this.getAll();
   }
 };
 </script>

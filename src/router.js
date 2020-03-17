@@ -15,8 +15,6 @@ import SIO from './pages/SIO'
 import VerMaisOrcamento from './pages/VerMaisOrcamento'
 import CalendarizacaoFazendo from './pages/CalendarizacaoFazendo'
 
-
-
 Vue.use(Router)
 
 export default new Router({
@@ -24,7 +22,8 @@ export default new Router({
     routes: [
         { path: '/', component: Login },
         {
-            path: '/app', component: App, children: [
+            path: '/app', component: App,           
+            children: [
                 { path: '/dashboard', component: Dashboard },
                 { path: '/upload', component: Upload },
                 { path: '/config', component: Config},
@@ -35,9 +34,8 @@ export default new Router({
                 { path: '/VertodosItCapacity', component: VertodosItCapacity},
                 { path: '/SIO', component: SIO},
                 { path: '/VerMaisOrcamento', component: VerMaisOrcamento},
-                { path: '/Calendarizacao', component: CalendarizacaoFazendo}
-                 
-            ]
+                { path: '/Calendarizacao', component: CalendarizacaoFazendo}                 
+            ]         
         },
         { path: '*', redirect: '/' }
     ]

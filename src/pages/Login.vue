@@ -25,16 +25,20 @@
                   />
                 </div>
                 <input
+                  ref="Inputuser"
                   v-model="user"
                   class="form-control mt-4 login"
                   type="text"
                   placeholder="User"
+                  @keydown.enter="irHome()"
                 />
                 <input
+                  
                   v-model="password"
                   class="form-control mt-4 login"
                   type="password"
                   placeholder="Password"
+                  @keydown.enter="irHome()"
                 />
 
                 <div class="centralizar">
@@ -61,6 +65,7 @@
 /* eslint-disable */
 
 export default {
+  
   data() {
     return {
       statusbtn: "Entrar",
@@ -80,12 +85,12 @@ export default {
         senha: this.password
       };
 
-      console.log(usuario);
-
       if (usuario.id == "admin" && usuario.senha == "admin2019") {
         setTimeout(() => {
           this.hab = false;
           this.statusbtn = "Entrar";
+
+          localStorage.setItem("nekot", "teste");
 
           this.$router.push("/dashboard");
         }, 2000);
@@ -94,7 +99,16 @@ export default {
           this.hab = false;
           this.statusbtn = "Entrar";
 
-          this.msgErro = "Usúario ou senha inválidos";
+          //this.msgErro = "Usúario ou senha inválidos";
+
+          toast = this.$toasted.error("Usúario ou senha inválidos", {
+            theme: "bubble",
+            position: "top-center",
+            icon: 'times',
+            duration: 5000
+          });
+
+          
         }, 2000);
 
         setTimeout(() => {
@@ -102,6 +116,10 @@ export default {
         }, 7000);
       }
     }
+  },
+  created(){
+
+
   }
 };
 </script>
