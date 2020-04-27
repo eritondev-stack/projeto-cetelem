@@ -29,7 +29,7 @@
                 </div>
               </div>
             </div>
-            <div v-else style="width: 72%;">
+            <div v-else style="width: 72%;" class="animated zoomInLeft">
               <apexchart class="box-content" type="pie" :options="chartOptions2" :series="series" />
             </div>
           </div>
@@ -44,7 +44,10 @@
             <span v-if="mostrarVerMaisOrca">Orçamento</span>
 
             <span v-else>
+
               <router-link tag="span" to="/vermaisorcamento">Ver mais</router-link>
+
+
             </span>
           </div>
           <div class="box2 d-flex justify-content-center align-items-center">
@@ -69,7 +72,7 @@
                 </div>
               </div>
             </div>
-            <div v-else style="width: 100%;">
+            <div v-else style="width: 100%;" class="animated zoomInLeft">
               <apexchart type="bar" :options="optionsITOrca" :series="seriesITOrca" />
             </div>
           </div>
@@ -99,7 +102,7 @@
                 </div>
               </div>
             </div>
-            <div v-else style="width: 95%">
+            <div v-else style="width: 95%" class="animated zoomInLeft">
               <apexchart type="area" :options="optionsITCapacity" :series="seriesITCapacity" />
             </div>
           </div>
@@ -108,7 +111,7 @@
         <div class="col-lg-4 col-md-6 mt-3">
           <div class="box-title-cal2">Projetos</div>
           <div class="box2 d-flex justify-content-center align-items-center">
-            <div style="width: 100%;">
+            <div style="width: 100%;" class="animated zoomInLeft">
               <apexchart type="bar" :options="optionsITProjetos" :series="seriesITProjetos" />
             </div>
           </div>

@@ -4,16 +4,8 @@ import Router from 'vue-router'
 import Login from './pages/Login'
 import App from './pages/App'
 import Dashboard from './pages/Dashboard'
-import Upload from './pages/Upload'
 import Config from './pages/Config'
-import VerMaisGov from './pages/VerMaisGov'
-import VerMaisCapacity from './pages/VerMaisCapacity'
-import VerMaisProjetos from './pages/VerMaisProjetos'
-import ProjetoSroll from './pages/ProjetoSroll'
-import VertodosItCapacity from './pages/VertodosItCapacity'
-import SIO from './pages/SIO'
 import VerMaisOrcamento from './pages/VerMaisOrcamento'
-import CalendarizacaoFazendo from './pages/CalendarizacaoFazendo'
 
 Vue.use(Router)
 
@@ -24,17 +16,10 @@ export default new Router({
         {
             path: '/app', component: App,           
             children: [
-                { path: '/dashboard', component: Dashboard },
-                { path: '/upload', component: Upload },
+                { path: '/dashboard', component: Dashboard },      
                 { path: '/config', component: Config},
-                { path: '/vermaisgov', component: VerMaisGov},
-                { path: '/vermaiscapacity', component: VerMaisCapacity},
-                { path: '/vermaisprojetos', component: VerMaisProjetos},
-                { path: '/projetosroll', component: ProjetoSroll},
-                { path: '/VertodosItCapacity', component: VertodosItCapacity},
-                { path: '/SIO', component: SIO},
                 { path: '/VerMaisOrcamento', component: VerMaisOrcamento},
-                { path: '/Calendarizacao', component: CalendarizacaoFazendo}                 
+                         
             ]         
         },
         { path: '*', redirect: '/' }

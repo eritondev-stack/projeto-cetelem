@@ -59,22 +59,20 @@
           <i style="font-size: 24px;" class="fas fa-calendar-check mr-2"></i>ISO
         </a>
       </router-link>
-
     </transition>
 
     <transition
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
-      <div @click="routerSend('config')"  v-show="show4" class="item-sidebar">
+      <div @click="routerSend('config')" v-show="show4" class="item-sidebar">
         <a class="text-white">
           <i style="font-size: 24px;" class="fas fa-cog mr-2"></i>Config
         </a>
       </div>
     </transition>
 
-
-        <transition
+    <transition
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutLeft"
     >
@@ -84,8 +82,6 @@
         </a>
       </div>
     </transition>
-
-
   </div>
 
   <div :class="overlay" @click="sair()"></div>
@@ -104,10 +100,9 @@ export default {
   components: {},
   /* eslint-disable */
   beforeRouteEnter(to, from, next) {
+    console.log("Cheguei");
 
-    console.log("Cheguei")
-
-    const token = localStorage.getItem("nekot")
+    const token = localStorage.getItem("nekot");
 
     if (token) {
       next(true);
@@ -131,19 +126,18 @@ export default {
   },
   methods: {
     async routerSend(route) {
-    
-    this.$router.push(`/${route}`).then(response =>{
+      this.$router
+        .push(`/${route}`)
+        .then(response => {
+          console.log(route);
 
-       console.log(route) 
-
-       if(route === "login"){
-         localStorage.removeItem("nekot")
-        }  
-            
-    }).catch(erro => {
-      console.log(erro)
-    })
-
+          if (route === "login") {
+            localStorage.removeItem("nekot");
+          }
+        })
+        .catch(erro => {
+          console.log(erro);
+        });
     },
     sidebarToggle() {
       if (this.sidebar == "sidebar") {
@@ -216,9 +210,7 @@ export default {
       this.sidebarToggle();
     }
   },
-  created() {
-    
-  }
+  created() {}
 };
 </script>
 
